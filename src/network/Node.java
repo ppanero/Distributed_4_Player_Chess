@@ -6,7 +6,6 @@ import java.io.*;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
-import java.nio.charset.Charset;
 
 /**
  * 
@@ -29,20 +28,27 @@ public class Node extends Thread{
 	public static final int MAX_BUFFER = 1024;
     public static final String NETWORK_CONFIGURATION_FILENAME = "netconfig.txt";
 	
-	int id;
-    Configuration netConfig;
-    int destinationPort = 0;
-    InetAddress destinationAddr = null;
-	DatagramSocket socket = null;
-	boolean receiving = true;
-	boolean hasMessageToSend = false;
-	byte[] message = null;
+	private int id;
+    private int msgId;
+    private Configuration netConfig;
+    private DatagramSocket socket;
+    private boolean receiving;
+    private boolean hasMessageToSend;
+    private byte[] message;
+    private InetAddress destinationAddr;
+    private int destinationPort;
 	
 	public Node(int id){
 		try {
 			this.id = id;
+            this.msgId = 0;
 			this.netConfig = Configuration.readConfigFromFile(this.NETWORK_CONFIGURATION_FILENAME);
-			socket = new DatagramSocket(netConfig.getLocalPort(), netConfig.getLocalAddress());
+			this.socket = new DatagramSocket(netConfig.getLocalPort(), netConfig.getLocalAddress());
+            this.receiving = true;
+            this.hasMessageToSend = false;
+            this.message = null;
+            this.destinationAddr = null;
+            this.destinationPort = 0;
             //log
             LogUtils.log("Ring node initiated with id: " + this.id, LogUtils.RING_NODE_LOG_FILENAME);
             LogUtils.log(this.netConfig.toString(), LogUtils.RING_NODE_LOG_FILENAME);
@@ -51,29 +57,45 @@ public class Node extends Thread{
 			System.exit(-1);
 		}
 	}
-
 	
-	public int getSocketPort(){
-		return netConfig.getLocalPort();
+	private void giveMessageToSend(byte[] msg, int desPort, InetAddress desAddr){
+		this.message = msg;
+		this.destinationPort = desPort;
+        this.destinationAddr = desAddr;
+        this.hasMessageToSend = true;
 	}
 	
-	public void giveMessageToSend(byte[] msg, int des_port, InetAddress des_addr){
-		hasMessageToSend = true;
-		message = msg;
-		destinationAddr = des_addr;
-        destinationPort = des_port;
-	}
-	
-	public void sendMessage(){
-		DataFrame frame = new DataFrame(destinationPort, destinationAddr,
-                                        netConfig.getLocalPort(), netConfig.getLocalAddress(), message);
-		frame.setToken(true);
-		hasMessageToSend = false;
+	private void sendMessage(){
+		DataFrame frame = new DataFrame(this.destinationPort,this.destinationAddr,
+                                        this.netConfig.getLocalPort(), this.netConfig.getLocalAddress(),
+                                        this.message, this.nextId());
 		sendFrame(frame);
+        this.hasMessageToSend = false;
 	}
-	
+
+    private void sendToken(DataFrame frame){
+        frame.setSourceAddr(this.netConfig.getLocalAddress());
+        frame.setSourcePort(this.netConfig.getLocalPort());
+        frame.setDestinationPort(this.netConfig.getSuccessorPort());
+        frame.setDestinationAddr(this.netConfig.getSuccessorAddr());
+        sendFrame(frame);
+        this.hasMessageToSend = false;
+    }
+
+    private void sendAck(DataFrame frame){
+        frame.swapAddresses();
+        frame.setAck(true);
+        sendFrame(frame);
+        this.hasMessageToSend = false;
+    }
+
+    private int nextId(){
+        this.msgId++;
+        return this.msgId;
+    }
+
 	//send a frame with the DatagramPacket through the socket
-	public void sendFrame(DataFrame frame){
+	private void sendFrame(DataFrame frame){
 			
 		DatagramPacket packet = null;
 		byte[] buf = new byte[MAX_BUFFER];
@@ -96,14 +118,14 @@ public class Node extends Thread{
 			e.printStackTrace();
 			System.exit(-1);
 		}
-		
 	}
 	
 	//Make a new token frame send it on
 	public void makeToken(){
-		DataFrame tokenFrame = new DataFrame();
-		tokenFrame.setToken(true);
-		sendFrame(tokenFrame);
+        DataFrame frame = new DataFrame(this.netConfig.getSuccessorPort(),this.netConfig.getSuccessorAddr(),
+                this.netConfig.getLocalPort(), this.netConfig.getLocalAddress());
+        sendFrame(frame);
+        hasMessageToSend = false;
 	}
 	
 	//stop the node from receiving
@@ -121,10 +143,7 @@ public class Node extends Thread{
 
     public void startNode(boolean initialNode){
         if(initialNode){
-            String s = new String ("test");
-            this.sendFrame(new DataFrame(this.netConfig.getSuccessorPort(),this.netConfig.getSuccessorAddr(),
-                    this.netConfig.getLocalPort(), this.netConfig.getLocalAddress(),
-                    s.getBytes(Charset.forName("UTF-8"))));
+            this.sendMessage();
         }
         this.start();
     }
@@ -142,7 +161,10 @@ public class Node extends Thread{
             //Log
             LogUtils.log("Ring node " + this.id + " started", LogUtils.RING_NODE_LOG_FILENAME);
 
-			while(receiving){
+			while(receiving ){
+                if(hasMessageToSend){
+                    sendMessage();
+                }
 				buffer = new byte[MAX_BUFFER];
 				packet = new DatagramPacket(buffer, buffer.length);
 				socket.receive(packet);
@@ -156,14 +178,16 @@ public class Node extends Thread{
                 LogUtils.log("Frame received", LogUtils.RING_NODE_LOG_FILENAME);
                 LogUtils.log(frame.toString(), LogUtils.RING_NODE_LOG_FILENAME);
 
-                System.out.println("Node " + id + " has received the following message.");
-                System.out.println("Received: " + frame.getMessage());
-                System.out.println("From: "+packet.getAddress()+":"+packet.getPort());
-                frame.swapAddresses();
-                //frame.acknowledge();
-                wait(3000);
-                sendFrame(frame);
-
+                if(frame.getToken()){
+                    sendToken(frame);
+                }
+                else if(frame.getAck()){
+                    //Remove frame from list of acknowledges pending
+                }
+                else{
+                    //Perform action and acknowledge
+                    sendAck(frame);
+                }
             }
 
 		//If after 5 seconds nothing has been received, timeout
@@ -171,8 +195,6 @@ public class Node extends Thread{
 		} catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }

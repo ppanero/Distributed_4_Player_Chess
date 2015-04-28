@@ -14,8 +14,13 @@ import java.util.Arrays;
  */
 
 public class DataFrame implements Serializable {
+
+    //id of the frame
+    private int id;
+    //true if it is acknowledging a message
+    private boolean ack;
 	//true if it is a token frame
-	private boolean token = false;
+	private boolean token;
 	//Destination port of the frame 
     private int destinationPort;
     //Destination address of the frame
@@ -31,6 +36,10 @@ public class DataFrame implements Serializable {
     public boolean getToken() {
         return this.token;
     }
+
+    public boolean getAck(){ return this.ack;}
+
+    public int getId(){ return this.id;}
 
     public int getDestinationPort() {
         return this.destinationPort;
@@ -60,20 +69,44 @@ public class DataFrame implements Serializable {
         this.sourcePort = src_port;
     }
 
+    public void setDestinationPort(int destPort){
+        this.destinationPort = destPort;
+    }
+
+    public void setDestinationAddr(InetAddress destAddr){
+        this.destinationAddr = destAddr;
+    }
+
     public void setToken(boolean t){
         this.token = t;
     }
 
-    //create either a Token or amp frame
-	public DataFrame(){ }
+    public void setAck(boolean a){
+        this.ack = a;
+    }
+
+    //For the token
+	public DataFrame(int destination,InetAddress destinationAddr, int source, InetAddress sourceAddr){
+        this.destinationPort = destination;
+        this.destinationAddr = destinationAddr;
+        this.sourcePort = source;
+        this.sourceAddr = sourceAddr;
+        this.message = new byte[] {-1};
+        this.ack = false;
+        this.token = true;
+        this.id = -1;
+    }
 	
 	//create a data frame
-	public DataFrame(int destination,InetAddress destinationAddr, int source, InetAddress sourceAddr, byte[] msg){
+	public DataFrame(int destination,InetAddress destinationAddr, int source, InetAddress sourceAddr, byte[] msg, int id){
 		this.destinationPort = destination;
         this.destinationAddr = destinationAddr;
 		this.sourcePort = source;
         this.sourceAddr = sourceAddr;
 		this.message = msg;
+        this.ack = false;
+        this.token = false;
+        this.id = id;
 	}
 
 	//swap the addresses when acknowledging a frame
@@ -88,7 +121,7 @@ public class DataFrame implements Serializable {
 
     @Override
     public String toString(){
-        return  "Frame status:  " + '\n' +
+        return  "Frame:  " + this.getId() + '\n' +
                 "   - token:     " + this.getToken() + '\n' +
                 "From: " + this.getSourceAddr() + " port: " + this.getSourcePort() + '\n' +
                 "To:   " + this.getDestinationAddr() + " port: " + this.getDestinationPort() + '\n' +

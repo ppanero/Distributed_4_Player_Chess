@@ -10,10 +10,10 @@ public class Main {
         int i = keyboard.nextInt();
         Node n = new Node(i);
         if(i == 1){
-            n.start(true);
+            n.startNode(true);
         }
         else{
-            n.start(false);
+            n.startNode(false);
         }
         int exit = keyboard.nextInt();
         while(exit!=0){
