@@ -1,0 +1,72 @@
+Ring node initiated with id: 1
+host address:          192.168.2.166
+host port:             6788
+predecessorAddr address:   192.168.1.8
+predecessorAddr port:      6788
+successorAddr address:     192.168.1.10
+successorAddr port:        6788
+
+Frame sent
+Frame status:  
+   - token:     false
+   - amp:       false
+   - ct:        false
+   - monitor:   false
+From: Macky.local/192.168.2.166 port: 6788
+To:   /192.168.1.10 port: 6788
+Message: [116, 101, 115, 116]
+Ring node 1 started
+Ring node initiated with id: 1
+host address:          192.168.2.166
+host port:             6788
+predecessorAddr address:   192.168.1.8
+predecessorAddr port:      6788
+successorAddr address:     192.168.1.10
+successorAddr port:        6788
+
+Frame sent
+Frame status:  
+   - token:     false
+   - amp:       false
+   - ct:        false
+   - monitor:   false
+From: Macky.local/192.168.2.166 port: 6788
+To:   /192.168.1.10 port: 6788
+Message: [116, 101, 115, 116]
+Ring node 1 started
+Ring node initiated with id: 1
+host address:          192.168.2.166
+host port:             6788
+predecessorAddr address:   192.168.1.8
+predecessorAddr port:      6788
+successorAddr address:     192.168.1.10
+successorAddr port:        6788
+
+Frame sent
+Frame status:  
+   - token:     false
+   - amp:       false
+   - ct:        false
+   - monitor:   false
+From: Macky.local/192.168.2.166 port: 6788
+To:   /192.168.1.10 port: 6788
+Message: [116, 101, 115, 116]
+Ring node 1 started
+Ring node initiated with id: 1
+host address:          192.168.1.1
+host port:             6788
+predecessorAddr address:   192.168.1.8
+predecessorAddr port:      6788
+successorAddr address:     192.168.1.10
+successorAddr port:        6788
+
+Frame sent
+Frame status:  
+   - token:     false
+   - amp:       false
+   - ct:        false
+   - monitor:   false
+From: /192.168.1.1 port: 6788
+To:   /192.168.1.10 port: 6788
+Message: [116, 101, 115, 116]
+Ring node 1 started

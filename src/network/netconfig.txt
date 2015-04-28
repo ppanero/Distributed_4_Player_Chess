@@ -1,3 +1,0 @@
-predecessor=192.168.1.8
-successor=192.168.1.10
-port=6788

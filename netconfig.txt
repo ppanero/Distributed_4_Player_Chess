@@ -1,0 +1,6 @@
+predecessorAddr=192.168.1.8
+predecessorPort=6788
+successorAddr=192.168.1.10
+successorPort=6788
+localAddr=192.168.1.1
+localPort=6788

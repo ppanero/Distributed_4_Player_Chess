@@ -1,10 +1,8 @@
 package network;
-/**
- * @author david : https://github.com/davidmight/TokenRing
- * Some modifications applied to make it communicate between machines
- */
 
 import java.io.Serializable;
+import java.net.InetAddress;
+import java.util.Arrays;
 
 /**
  *
@@ -17,84 +15,83 @@ import java.io.Serializable;
 
 public class DataFrame implements Serializable {
 	//true if it is a token frame
-	boolean token = false;
-	//true if it is a amp frame
-	boolean amp = false;
-	//true if it is a Claim token frame
-	boolean ct = false;
-	//true if the frame has the token frame
-	boolean hasToken = false;
-	//true if the frame has passed the monitor station
-	boolean monitor = false;
-	//true if a frame reached its intended recipient
-	boolean frameStatus = false;
+	private boolean token = false;
 	//Destination port of the frame 
-	int destination_addr;
+    private int destinationPort;
+    //Destination address of the frame
+    private InetAddress destinationAddr;
 	//Source port of the frame
-	int source_addr;
-	//Message the frame is transmitting (if any)
-	String message;
-	
-	//create either a Token or amp frame
-	public DataFrame(){
-		
-	}
-	
-	//create a claim token frame
-	public DataFrame(int source){
-		ct = true;
-		source_addr = source;
-	}
+    private int sourcePort;
+    //Source address of the frame
+    private InetAddress sourceAddr;
+    //Message the frame is transmitting (if any)
+    private byte[] message;
+
+
+    public boolean getToken() {
+        return this.token;
+    }
+
+    public int getDestinationPort() {
+        return this.destinationPort;
+    }
+
+    public InetAddress getDestinationAddr() {
+        return this.destinationAddr;
+    }
+
+    public int getSourcePort() {
+        return this.sourcePort;
+    }
+
+    public InetAddress getSourceAddr() {
+        return this.sourceAddr;
+    }
+
+    public byte[] getMessage() {
+        return this.message;
+    }
+
+    public void setSourceAddr(InetAddress src_addr) {
+        this.sourceAddr = src_addr;
+    }
+
+    public void setSourcePort(int src_port) {
+        this.sourcePort = src_port;
+    }
+
+    public void setToken(boolean t){
+        this.token = t;
+    }
+
+    //create either a Token or amp frame
+	public DataFrame(){ }
 	
 	//create a data frame
-	public DataFrame(int destination, int source, String msg){
-		this.destination_addr = destination;
-		this.source_addr = source;
+	public DataFrame(int destination,InetAddress destinationAddr, int source, InetAddress sourceAddr, byte[] msg){
+		this.destinationPort = destination;
+        this.destinationAddr = destinationAddr;
+		this.sourcePort = source;
+        this.sourceAddr = sourceAddr;
 		this.message = msg;
 	}
-	
-	public void setAsToken(){
-		token = true;
-	}
-	
-	public void setAsAmp(){
-		amp = true;
-	}
-	
+
 	//swap the addresses when acknowledging a frame
 	public void swapAddresses(){
-		int temp;
-		temp = destination_addr;
-		destination_addr = source_addr;
-		source_addr = temp;
-		
+        int temp_port = destinationPort;
+		destinationPort = sourcePort;
+		sourcePort = temp_port;
+        InetAddress temp_addr = destinationAddr;
+        destinationAddr = sourceAddr;
+        sourceAddr = temp_addr;
 	}
-	
-	public boolean getFrameStatus(){
-		return frameStatus;
-	}
-	
-	public void acknowledge(){
-		frameStatus = true;
-	}
-	
-	public void setTokenBit(boolean con){
-		hasToken = con;
-	}
-	
-	public void setMonitorBit(boolean con){
-		monitor = con;
-	}
-	
-	public int getDes(){
-		return this.destination_addr;
-	}
-	
-	public int getSource(){
-		return this.source_addr;
-	}
-	
-	public String getMsg(){
-		return this.message;
-	}
+
+    @Override
+    public String toString(){
+        return  "Frame status:  " + '\n' +
+                "   - token:     " + this.getToken() + '\n' +
+                "From: " + this.getSourceAddr() + " port: " + this.getSourcePort() + '\n' +
+                "To:   " + this.getDestinationAddr() + " port: " + this.getDestinationPort() + '\n' +
+                "Message: " + Arrays.toString(this.getMessage());
+    }
 }
