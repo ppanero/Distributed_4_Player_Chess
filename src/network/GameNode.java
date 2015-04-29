@@ -68,7 +68,7 @@ public class GameNode extends Thread{
 	private void sendMessage(){
 		DataFrame frame = new DataFrame(this.destinationPort,this.destinationAddr,
                                         this.netConfig.getLocalPort(), this.netConfig.getLocalAddress(),
-                                        this.message, this.nextId());
+                                        this.message, this.nextMsgId());
 		sendFrame(frame);
         this.hasMessageToSend = false;
 	}
@@ -89,7 +89,7 @@ public class GameNode extends Thread{
         this.hasMessageToSend = false;
     }
 
-    private int nextId(){
+    private int nextMsgId(){
         this.msgId++;
         return this.msgId;
     }

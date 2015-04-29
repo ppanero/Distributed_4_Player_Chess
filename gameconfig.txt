@@ -1,0 +1,8 @@
+localAddr=192.168.1.1
+localPort=50001
+nextPlayerAddr=192.168.1.2
+nextPlayerPort=50001
+thirdPlayerAddr=192.168.1.3
+thirdPlayerPort=50001
+fourthPlayerAddr=192.168.1.4
+fourthPlayerPort=50001
