@@ -1,4 +1,4 @@
-import network.Node;
+import network.GameNode;
 
 import java.util.Scanner;
 
@@ -8,7 +8,7 @@ public class Main {
         Scanner keyboard = new Scanner(System.in);
         System.out.println("enter an integer");
         int i = keyboard.nextInt();
-        Node n = new Node(i);
+        GameNode n = new GameNode(i);
         if(i == 1){
             n.startNode(true);
         }

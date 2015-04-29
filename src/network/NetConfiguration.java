@@ -12,18 +12,18 @@ import java.net.InetAddress;
  * node has the address of its predecessorAddr, successorAddr, and itself. It also has the
  * localPort to be used when communicating.
  */
-public class Configuration {
+public class NetConfiguration {
 
-    private static final String PREDECESSOR_CONFIG_NAME = "predecessorAddr";
-    private static final String SUCCESSOR_CONFIG_NAME = "successorAddr";
     private static final String LOCAL_CONFIG_NAME = "localAddr";
     private static final String LOCAL_PORT_CONFIG_NAME = "localPort";
+    private static final String PREDECESSOR_CONFIG_NAME = "predecessorAddr";
     private static final String PREDECESSOR_PORT_CONFIG_NAME="predecessorPort";
+    private static final String SUCCESSOR_CONFIG_NAME = "successorAddr";
     private static final String SUCCESSOR_PORT_CONFIG_NAME="successorPort";
 
+    private InetAddress localAddress;
     private InetAddress predecessorAddr;
     private InetAddress successorAddr;
-    private InetAddress localAddress;
     private int localPort;
     private int predecessorPort;
     private int successorPort;
@@ -76,7 +76,7 @@ public class Configuration {
         this.successorPort = successorPort;
     }
 
-    public Configuration(InetAddress p, InetAddress s, InetAddress h, int lport, int pport, int sport){
+    public NetConfiguration(InetAddress p, InetAddress s, InetAddress h, int lport, int pport, int sport){
         this.setPredecessorAddr(p);
         this.setSuccessorAddr(s);
         this.setLocalAddress(h);
@@ -85,7 +85,7 @@ public class Configuration {
         this.setSuccessorPort(sport);
     }
 
-    public static Configuration readConfigFromFile(String filename){
+    public static NetConfiguration readConfigFromFile(String filename){
 
         BufferedReader in = null;
         String line;
@@ -124,16 +124,16 @@ public class Configuration {
             System.out.println("Error while reading from the network configuration file");
         }
 
-        return new Configuration(predecessor, successor, host, lport, pport, sport);
+        return new NetConfiguration(predecessor, successor, host, lport, pport, sport);
     }
 
     @Override
     public String toString() {
         return  "host address:          " + this.localAddress.getHostAddress() + '\n' +
                 "host port:             " + this.localPort + '\n' +
-                "predecessorAddr address:   " + this.predecessorAddr.getHostAddress() + '\n' +
-                "predecessorAddr port:      " + this.predecessorPort + '\n' +
-                "successorAddr address:     " + this.successorAddr.getHostAddress() + '\n' +
-                "successorAddr port:        " + this.successorPort + '\n';
+                "predecessor address:   " + this.predecessorAddr.getHostAddress() + '\n' +
+                "predecessor port:      " + this.predecessorPort + '\n' +
+                "successor address:     " + this.successorAddr.getHostAddress() + '\n' +
+                "successor port:        " + this.successorPort;
     }
 }

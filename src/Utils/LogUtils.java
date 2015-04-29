@@ -7,7 +7,9 @@ import java.io.IOException;
 
 public class LogUtils {
 
+    public static final String FD_NODE_LOG_FILENAME = "fdlog.txt";
     public static final String RING_NODE_LOG_FILENAME = "rnlog.txt";
+    public static final String GAME_LOG_FILENAME = "gamelog.txt";
 
     public static void log(String content, String filename){
         File file = new File(filename);

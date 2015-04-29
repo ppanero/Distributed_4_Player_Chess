@@ -1,6 +1,6 @@
 predecessorAddr=192.168.1.8
-predecessorPort=6788
+predecessorPort=50000
 successorAddr=192.168.1.10
-successorPort=6788
+successorPort=50000
 localAddr=192.168.1.1
-localPort=6788
+localPort=50000

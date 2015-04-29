@@ -23,14 +23,14 @@ import java.net.InetAddress;
  *
  */
 
-public class Node extends Thread{
+public class GameNode extends Thread{
 	
 	public static final int MAX_BUFFER = 1024;
-    public static final String NETWORK_CONFIGURATION_FILENAME = "netconfig.txt";
+    public static final String GAME_CONFIGURATION_FILENAME = "netconfig.txt";
 	
 	private int id;
     private int msgId;
-    private Configuration netConfig;
+    private NetConfiguration netConfig;
     private DatagramSocket socket;
     private boolean receiving;
     private boolean hasMessageToSend;
@@ -38,11 +38,11 @@ public class Node extends Thread{
     private InetAddress destinationAddr;
     private int destinationPort;
 	
-	public Node(int id){
+	public GameNode(int id){
 		try {
 			this.id = id;
             this.msgId = 0;
-			this.netConfig = Configuration.readConfigFromFile(this.NETWORK_CONFIGURATION_FILENAME);
+			this.netConfig = NetConfiguration.readConfigFromFile(this.GAME_CONFIGURATION_FILENAME);
 			this.socket = new DatagramSocket(netConfig.getLocalPort(), netConfig.getLocalAddress());
             this.receiving = true;
             this.hasMessageToSend = false;
@@ -162,9 +162,6 @@ public class Node extends Thread{
             LogUtils.log("Ring node " + this.id + " started", LogUtils.RING_NODE_LOG_FILENAME);
 
 			while(receiving ){
-                if(hasMessageToSend){
-                    sendMessage();
-                }
 				buffer = new byte[MAX_BUFFER];
 				packet = new DatagramPacket(buffer, buffer.length);
 				socket.receive(packet);
@@ -179,6 +176,10 @@ public class Node extends Thread{
                 LogUtils.log(frame.toString(), LogUtils.RING_NODE_LOG_FILENAME);
 
                 if(frame.getToken()){
+                    //Should wait here until player makes move
+                    if(hasMessageToSend){
+                        sendMessage();
+                    }
                     sendToken(frame);
                 }
                 else if(frame.getAck()){
