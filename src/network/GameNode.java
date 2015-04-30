@@ -26,11 +26,11 @@ import java.net.InetAddress;
 public class GameNode extends Thread{
 	
 	public static final int MAX_BUFFER = 1024;
-    public static final String GAME_CONFIGURATION_FILENAME = "netconfig.txt";
+    public static final String GAME_CONFIGURATION_FILENAME = "gameconfig.txt";
 	
 	private int id;
     private int msgId;
-    private NetConfiguration netConfig;
+    private GameNetConfiguration gameConfig;
     private DatagramSocket socket;
     private boolean receiving;
     private boolean hasMessageToSend;
@@ -42,8 +42,8 @@ public class GameNode extends Thread{
 		try {
 			this.id = id;
             this.msgId = 0;
-			this.netConfig = NetConfiguration.readConfigFromFile(this.GAME_CONFIGURATION_FILENAME);
-			this.socket = new DatagramSocket(netConfig.getLocalPort(), netConfig.getLocalAddress());
+			this.gameConfig = GameNetConfiguration.readConfigFromFile(this.GAME_CONFIGURATION_FILENAME);
+			this.socket = new DatagramSocket(gameConfig.getLocalPort(), gameConfig.getLocalAddress());
             this.receiving = true;
             this.hasMessageToSend = false;
             this.message = null;
@@ -51,7 +51,7 @@ public class GameNode extends Thread{
             this.destinationPort = 0;
             //log
             LogUtils.log("Ring node initiated with id: " + this.id, LogUtils.RING_NODE_LOG_FILENAME);
-            LogUtils.log(this.netConfig.toString(), LogUtils.RING_NODE_LOG_FILENAME);
+            LogUtils.log(this.gameConfig.toString(), LogUtils.RING_NODE_LOG_FILENAME);
 		} catch(Exception e){
 			e.printStackTrace();
 			System.exit(-1);
@@ -66,18 +66,18 @@ public class GameNode extends Thread{
 	}
 	
 	private void sendMessage(){
-		DataFrame frame = new DataFrame(this.destinationPort,this.destinationAddr,
-                                        this.netConfig.getLocalPort(), this.netConfig.getLocalAddress(),
+		/*DataFrame frame = new DataFrame(this.destinationPort,this.destinationAddr,
+                                        this.gameConfig.getLocalPort(), this.gameConfig.getLocalAddress(),
                                         this.message, this.nextMsgId());
 		sendFrame(frame);
-        this.hasMessageToSend = false;
+        this.hasMessageToSend = false;*/
 	}
 
     private void sendToken(DataFrame frame){
-        frame.setSourceAddr(this.netConfig.getLocalAddress());
-        frame.setSourcePort(this.netConfig.getLocalPort());
-        frame.setDestinationPort(this.netConfig.getSuccessorPort());
-        frame.setDestinationAddr(this.netConfig.getSuccessorAddr());
+        frame.setSourceAddr(this.gameConfig.getLocalAddress());
+        frame.setSourcePort(this.gameConfig.getLocalPort());
+        frame.setDestinationPort(this.gameConfig.getSuccessorPort());
+        frame.setDestinationAddr(this.gameConfig.getSuccessorAddr());
         sendFrame(frame);
         this.hasMessageToSend = false;
     }
@@ -122,8 +122,8 @@ public class GameNode extends Thread{
 	
 	//Make a new token frame send it on
 	public void makeToken(){
-        DataFrame frame = new DataFrame(this.netConfig.getSuccessorPort(),this.netConfig.getSuccessorAddr(),
-                this.netConfig.getLocalPort(), this.netConfig.getLocalAddress());
+        DataFrame frame = new DataFrame(this.gameConfig.getSuccessorPort(),this.gameConfig.getSuccessorAddr(),
+                this.gameConfig.getLocalPort(), this.gameConfig.getLocalAddress());
         sendFrame(frame);
         hasMessageToSend = false;
 	}
@@ -140,13 +140,6 @@ public class GameNode extends Thread{
 		}
 		
 	}
-
-    public void startNode(boolean initialNode){
-        if(initialNode){
-            this.sendMessage();
-        }
-        this.start();
-    }
 
     public void stopNode(){
         this.switchReceiving();
@@ -169,7 +162,7 @@ public class GameNode extends Thread{
 
 				ByteArrayInputStream fis = new ByteArrayInputStream(buffer);
 				ObjectInputStream in = new ObjectInputStream(fis);
-				DataFrame frame = (DataFrame)in.readObject();
+				GameFrame frame = (GameFrame)in.readObject();
 
                 //Log
                 LogUtils.log("Frame received", LogUtils.RING_NODE_LOG_FILENAME);

@@ -12,7 +12,7 @@ import java.net.InetAddress;
  * node has the address of its predecessorAddr, successorAddr, and itself. It also has the
  * localPort to be used when communicating.
  */
-public class NetConfiguration {
+public class GameNetConfiguration {
 
     private static final String LOCAL_CONFIG_NAME = "localAddr";
     private static final String LOCAL_PORT_CONFIG_NAME = "localPort";
@@ -76,7 +76,7 @@ public class NetConfiguration {
         this.successorPort = successorPort;
     }
 
-    public NetConfiguration(InetAddress p, InetAddress s, InetAddress h, int lport, int pport, int sport){
+    public GameNetConfiguration(InetAddress p, InetAddress s, InetAddress h, int lport, int pport, int sport){
         this.setPredecessorAddr(p);
         this.setSuccessorAddr(s);
         this.setLocalAddress(h);
@@ -85,7 +85,7 @@ public class NetConfiguration {
         this.setSuccessorPort(sport);
     }
 
-    public static NetConfiguration readConfigFromFile(String filename){
+    public static GameNetConfiguration readConfigFromFile(String filename){
 
         BufferedReader in = null;
         String line;
@@ -124,7 +124,7 @@ public class NetConfiguration {
             System.out.println("Error while reading from the network configuration file");
         }
 
-        return new NetConfiguration(predecessor, successor, host, lport, pport, sport);
+        return new GameNetConfiguration(predecessor, successor, host, lport, pport, sport);
     }
 
     @Override

@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
  *
  */
 
-public class FDNode {
+public class FDNode extends Thread{
 
     public static final int MAX_BUFFER = 1024;
     public static final String NETWORK_CONFIGURATION_FILENAME = "netconfig.txt";
@@ -24,7 +24,7 @@ public class FDNode {
 
     private int id;
     private boolean failureDetected;
-    private NetConfiguration netConfig;
+    private FDNetConfiguration netConfig;
     private DatagramSocket socket;
     private boolean running;
     private List<Heartbeat> pendingHeartbeats;
@@ -33,7 +33,7 @@ public class FDNode {
     public FDNode(int id){
         try {
             this.id = id;
-            this.netConfig = NetConfiguration.readConfigFromFile(FDNode.NETWORK_CONFIGURATION_FILENAME);
+            this.netConfig = FDNetConfiguration.readConfigFromFile(FDNode.NETWORK_CONFIGURATION_FILENAME);
             this.socket = new DatagramSocket(netConfig.getLocalPort(), netConfig.getLocalAddress());
             this.pendingHeartbeats = new ArrayList<Heartbeat>();
             this.scheduledExecutorService = Executors.newScheduledThreadPool(3);
@@ -90,7 +90,7 @@ public class FDNode {
         this.scheduledExecutorService.shutdown();
     }
 
-    public void startFDNode() {
+    public void run() {
         //Log
         LogUtils.log("FD node " + this.id + " started", LogUtils.FD_NODE_LOG_FILENAME);
 
@@ -132,6 +132,7 @@ public class FDNode {
             }
         }, 10, 300, TimeUnit.SECONDS);
 
+        //Receiver of the heartbeats and acknowledges to them
         this.scheduledExecutorService.execute(new Runnable() {
             @Override
             public void run() {
@@ -139,9 +140,6 @@ public class FDNode {
                 byte[] buffer;
                 try {
                     while (running) {
-                        if (failureDetected) {
-                            //Do something
-                        }
                         buffer = new byte[MAX_BUFFER];
                         packet = new DatagramPacket(buffer, buffer.length);
                         socket.receive(packet);
@@ -174,7 +172,7 @@ public class FDNode {
                             //Perform action and acknowledge
                             sendAck(frame);
                             //Log
-                            LogUtils.log("Acknowledge sent", LogUtils.FD_NODE_LOG_FILENAME);
+                            LogUtils.log("Acknowledge sent ", LogUtils.FD_NODE_LOG_FILENAME);
                         }
                     }
                 } catch (ClassNotFoundException e) {
