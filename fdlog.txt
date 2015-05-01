@@ -1,0 +1,45 @@
+Failure detection node created with id: 1
+host address:          192.168.2.166
+host port:             50000
+predecessor address:   192.168.2.166
+predecessor port:      50002
+successor address:     192.168.2.166
+successor port:        50001
+FD node 1 started
+Frame sent
+Heartbeat frame: 1430410809130 from: 192.168.2.166 , 50000 to: 192.168.2.166 , 50002
+Predecessor heartbeat sent
+Frame sent
+Heartbeat frame: 1430410809161 from: 192.168.2.166 , 50000 to: 192.168.2.166 , 50001
+Successor heartbeat sent
+Frame sent
+Heartbeat frame: 1430410814165 from: 192.168.2.166 , 50000 to: 192.168.2.166 , 50002
+Predecessor heartbeat sent
+Frame sent
+Heartbeat frame: 1430410814174 from: 192.168.2.166 , 50000 to: 192.168.2.166 , 50001
+Successor heartbeat sent
+Frame sent
+Heartbeat frame: 1430410819179 from: 192.168.2.166 , 50000 to: 192.168.2.166 , 50002
+Predecessor heartbeat sent
+Frame sent
+Heartbeat frame: 1430410819188 from: 192.168.2.166 , 50000 to: 192.168.2.166 , 50001
+Successor heartbeat sent
+Failure checker started
+Failure detected. Heartbeat not acknowledge after 10
+node address: 192.168.2.166 timestamp 1430410809130
+Failure detected. Heartbeat not acknowledge after 10
+node address: 192.168.2.166 timestamp 1430410809161
+Failure detected. Heartbeat not acknowledge after 10
+node address: 192.168.2.166 timestamp 1430410814165
+Failure detected. Heartbeat not acknowledge after 10
+node address: 192.168.2.166 timestamp 1430410814174
+Failure detected. Heartbeat not acknowledge after 10
+node address: 192.168.2.166 timestamp 1430410819179
+Failure detected. Heartbeat not acknowledge after 10
+node address: 192.168.2.166 timestamp 1430410819188
+Frame sent
+Heartbeat frame: 1430410824192 from: 192.168.2.166 , 50000 to: 192.168.2.166 , 50002
+Predecessor heartbeat sent
+Frame sent
+Heartbeat frame: 1430410824193 from: 192.168.2.166 , 50000 to: 192.168.2.166 , 50001
+Successor heartbeat sent

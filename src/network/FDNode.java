@@ -19,8 +19,8 @@ public class FDNode extends Thread{
 
     public static final int MAX_BUFFER = 1024;
     public static final String NETWORK_CONFIGURATION_FILENAME = "netconfig.txt";
-    //5 minutes (5 * 1000 = 5 seconds * 60) in order for a node to be considered failed
-    public static final long TIME_TO_FAILURE = 5 * 60 * 1000;
+    //5 minutes (5 * 1000 = 5 seconds * 60 = 300000) in order for a node to be considered failed
+    public static final long TIME_TO_FAILURE = 10;
 
     private int id;
     private boolean failureDetected;
@@ -28,7 +28,7 @@ public class FDNode extends Thread{
     private DatagramSocket socket;
     private boolean running;
     private List<Heartbeat> pendingHeartbeats;
-    ScheduledExecutorService scheduledExecutorService;
+    private ScheduledExecutorService scheduledExecutorService;
 
     public FDNode(int id){
         try {
@@ -40,6 +40,7 @@ public class FDNode extends Thread{
             this.failureDetected = false;
             this.running = true;
             //log
+            LogUtils.createLog(LogUtils.FD_NODE_LOG_FILENAME);
             LogUtils.log("Failure detection node created with id: " + this.id, LogUtils.FD_NODE_LOG_FILENAME);
             LogUtils.log(this.netConfig.toString(), LogUtils.FD_NODE_LOG_FILENAME);
         } catch(Exception e){
@@ -48,7 +49,7 @@ public class FDNode extends Thread{
         }
     }
 
-    private void fialureDetected(){
+    private void failureDetected(){
         this.failureDetected = true;
     }
 
@@ -58,7 +59,6 @@ public class FDNode extends Thread{
         sendFrame(frame);
     }
 
-    //send a frame with the DatagramPacket through the socket
     private void sendFrame(DataFrame frame){
 
         DatagramPacket packet = null;
@@ -93,23 +93,29 @@ public class FDNode extends Thread{
     public void run() {
         //Log
         LogUtils.log("FD node " + this.id + " started", LogUtils.FD_NODE_LOG_FILENAME);
-
+        System.out.println("FD node " + this.id + " started");
         //Sender task for the ExecutorService (executed each minute)
         this.scheduledExecutorService.scheduleWithFixedDelay(new Runnable() {
             @Override
             public void run() {
                 //Send heartbeat to predecessor
-                sendFrame(new HeartbeatFrame(netConfig.getPredecessorPort(), netConfig.getPredecessorAddr(),
-                        netConfig.getLocalPort(), netConfig.getLocalAddress()));
+                HeartbeatFrame hp = new HeartbeatFrame(netConfig.getPredecessorPort(), netConfig.getPredecessorAddr(),
+                        netConfig.getLocalPort(), netConfig.getLocalAddress());
+                sendFrame(hp);
+                pendingHeartbeats.add(hp.getHeartbeat());
                 //Log
                 LogUtils.log("Predecessor heartbeat sent", LogUtils.FD_NODE_LOG_FILENAME);
+                System.out.println("Predecessor heartbeat sent");
                 //Sed heartbeat to successor
-                sendFrame(new HeartbeatFrame(netConfig.getSuccessorPort(), netConfig.getSuccessorAddr(),
-                        netConfig.getLocalPort(), netConfig.getLocalAddress()));
+                HeartbeatFrame hs = new HeartbeatFrame(netConfig.getSuccessorPort(), netConfig.getSuccessorAddr(),
+                        netConfig.getLocalPort(), netConfig.getLocalAddress());
+                sendFrame(hs);
+                pendingHeartbeats.add(hs.getHeartbeat());
                 //Log
                 LogUtils.log("Successor heartbeat sent", LogUtils.FD_NODE_LOG_FILENAME);
+                System.out.println("Successor heartbeat sent");
             }
-        }, 0, 60, TimeUnit.SECONDS);
+        }, 5, 5, TimeUnit.SECONDS);
 
         //Failure checker for the ExecutorService (executed each 5 minutes)
         this.scheduledExecutorService.scheduleAtFixedRate(new Runnable() {
@@ -117,20 +123,31 @@ public class FDNode extends Thread{
             public void run() {
                 //Check if there is any heartbeat in the list that have not been acknowledge
                 //in the past 5 minutes (max temp for a player to move)
+                //Log
+                LogUtils.log("Failure checker started", LogUtils.FD_NODE_LOG_FILENAME);
+                System.out.println("Failure checker started");
+                int count = 0;
                 for (Heartbeat h : pendingHeartbeats) {
                     long hTimestamp = h.getTimestamp() + FDNode.TIME_TO_FAILURE;
                     long currentTimestamp = System.currentTimeMillis();
-                    if (currentTimestamp <= hTimestamp) {
+                    if (currentTimestamp >= hTimestamp) {
+                        count++;
                         //Failure detected from node h.getNodeAddress()
-                        failureDetected = true;
+                        failureDetected();
                         //Log
                         LogUtils.log("Failure detected. Heartbeat not acknowledge after " + FDNode.TIME_TO_FAILURE
                                     , LogUtils.FD_NODE_LOG_FILENAME);
                         LogUtils.log(h.toString(), LogUtils.FD_NODE_LOG_FILENAME);
+                        System.out.println("Failure detected. Heartbeat not acknowledge after ");
                     }
                 }
+                if(count == 0){
+                    //Log
+                    LogUtils.log("Failure checker finished: no failures detected", LogUtils.FD_NODE_LOG_FILENAME);
+                    System.out.println("Failure checker finished: no failures detected");
+                }
             }
-        }, 10, 300, TimeUnit.SECONDS);
+        }, 20, 20, TimeUnit.SECONDS);
 
         //Receiver of the heartbeats and acknowledges to them
         this.scheduledExecutorService.execute(new Runnable() {
@@ -150,6 +167,7 @@ public class FDNode extends Thread{
                         //Log
                         LogUtils.log("Frame received", LogUtils.FD_NODE_LOG_FILENAME);
                         LogUtils.log(frame.toString(), LogUtils.FD_NODE_LOG_FILENAME);
+                        System.out.println("Frame received");
 
                         if (frame.getAck()) {
                             //Remove frame from list of acknowledges pending
@@ -159,10 +177,12 @@ public class FDNode extends Thread{
                                 //Remove in a while loop to remove all the heartbeats from the same node
                                 //that have a timestamp lower or equal to the heartbeat (later heartbeats
                                 //will have to be acknowledge again.
-                                while (!pendingHeartbeats.isEmpty() && pendingHeartbeats.remove(heartbeat));
+                                while (!pendingHeartbeats.isEmpty() && pendingHeartbeats.remove(heartbeat))
+                                    System.out.println(pendingHeartbeats.toString());
                                 //Log
                                 LogUtils.log("Acknowledge received", LogUtils.FD_NODE_LOG_FILENAME);
                                 LogUtils.log(heartbeat.toString(), LogUtils.FD_NODE_LOG_FILENAME);
+                                System.out.println("Acknowledge received");
                             } else {
                                 //Log
                                 LogUtils.log("ERROR: pending heartbeats list is empty", LogUtils.RING_NODE_LOG_FILENAME);
@@ -172,7 +192,8 @@ public class FDNode extends Thread{
                             //Perform action and acknowledge
                             sendAck(frame);
                             //Log
-                            LogUtils.log("Acknowledge sent ", LogUtils.FD_NODE_LOG_FILENAME);
+                            LogUtils.log("Acknowledge sent", LogUtils.FD_NODE_LOG_FILENAME);
+                            System.out.println("Acknowledge sent");
                         }
                     }
                 } catch (ClassNotFoundException e) {

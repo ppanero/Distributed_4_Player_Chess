@@ -32,7 +32,7 @@ public class Heartbeat implements Serializable {
         if (other == this) return true;
         if (!(other instanceof Heartbeat))return false;
         Heartbeat otherHeartbeat = (Heartbeat)other;
-        return this.nodeAddress == otherHeartbeat.nodeAddress &&
+        return this.nodeAddress.equals(otherHeartbeat.nodeAddress) &&
                 this.timestamp >= otherHeartbeat.timestamp;
     }
 
