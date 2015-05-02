@@ -12,7 +12,12 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 /**
- *
+ * This class represents a failure detection node. It has three threads executing:
+ * - The sender thread sends heartbeats to the predecessor and successor node with a delay of 30 seconds.
+ * - The receiver thread listens to incoming messages, and either acks them or delete them from the pending list
+ *   if they are an ack.
+ * - The checker thread checks for non-acked heatbeats in the previous 3 minutes. In that case a fialure is detected.
+ *   This thread runs with a rate of 1 minute.
  */
 
 public class FDNode extends Thread{

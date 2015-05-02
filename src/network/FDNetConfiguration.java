@@ -14,11 +14,11 @@ import java.net.InetAddress;
  */
 public class FDNetConfiguration {
 
-    private static final String LOCAL_CONFIG_NAME = "localAddr";
+    private static final String LOCAL_ADDRESS_CONFIG_NAME = "localAddr";
     private static final String LOCAL_PORT_CONFIG_NAME = "localPort";
-    private static final String PREDECESSOR_CONFIG_NAME = "predecessorAddr";
+    private static final String PREDECESSOR_ADDRESS_CONFIG_NAME = "predecessorAddr";
     private static final String PREDECESSOR_PORT_CONFIG_NAME="predecessorPort";
-    private static final String SUCCESSOR_CONFIG_NAME = "successorAddr";
+    private static final String SUCCESSOR_ADDRESS_CONFIG_NAME = "successorAddr";
     private static final String SUCCESSOR_PORT_CONFIG_NAME="successorPort";
 
     private InetAddress localAddress;
@@ -98,13 +98,13 @@ public class FDNetConfiguration {
             {
                 System.out.println(line);
                 String[] data = line.split("=");
-                if(data[0].equals(PREDECESSOR_CONFIG_NAME)){
+                if(data[0].equals(PREDECESSOR_ADDRESS_CONFIG_NAME)){
                     predecessor = InetAddress.getByName(data[1]);
                 }
-                else if(data[0].equals(SUCCESSOR_CONFIG_NAME)){
+                else if(data[0].equals(SUCCESSOR_ADDRESS_CONFIG_NAME)){
                     successor = InetAddress.getByName(data[1]);
                 }
-                else if(data[0].equals(LOCAL_CONFIG_NAME)){
+                else if(data[0].equals(LOCAL_ADDRESS_CONFIG_NAME)){
                     host = InetAddress.getByName(data[1]);
                 }
                 else if(data[0].equals(LOCAL_PORT_CONFIG_NAME)){

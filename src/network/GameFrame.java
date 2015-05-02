@@ -14,6 +14,7 @@ public class GameFrame<T> extends DataFrame{
     private boolean token;
     //Message the frame is transmitting (if any)
     private T message;
+    private long timestamp;
 
 
     public boolean getToken() {
@@ -23,9 +24,17 @@ public class GameFrame<T> extends DataFrame{
     public T getMessage() {
         return this.message;
     }
-    
+
+    public long getTimestamp() {
+        return timestamp;
+    }
+
     public void setToken(boolean t){
         this.token = t;
+    }
+
+    public void setTimestamp(long ts){
+        this.timestamp = ts;
     }
 
 
@@ -38,8 +47,10 @@ public class GameFrame<T> extends DataFrame{
     }
 
     //create a data frame
-    public GameFrame(int destination,InetAddress destinationAddr, int source, InetAddress sourceAddr, T msg, int id){
+    public GameFrame(int destination,InetAddress destinationAddr, int source, InetAddress sourceAddr,
+                     T msg, long timestamp,int id){
         super(destination, destinationAddr, source, sourceAddr);
+        this.timestamp = timestamp;
         this.message = msg;
         this.ack = false;
         this.token = false;

@@ -14,83 +14,108 @@ import java.net.InetAddress;
  */
 public class GameNetConfiguration {
 
-    private static final String LOCAL_CONFIG_NAME = "localAddr";
+    private static final String LOCAL_ADDRESS_CONFIG_NAME = "localAddr";
     private static final String LOCAL_PORT_CONFIG_NAME = "localPort";
-    private static final String PREDECESSOR_CONFIG_NAME = "predecessorAddr";
-    private static final String PREDECESSOR_PORT_CONFIG_NAME="predecessorPort";
-    private static final String SUCCESSOR_CONFIG_NAME = "successorAddr";
-    private static final String SUCCESSOR_PORT_CONFIG_NAME="successorPort";
+    private static final String SECOND_ADDRESS_CONFIG_NAME = "secondAddr";
+    private static final String SECOND_PORT_CONFIG_NAME = "secondPort";
+    private static final String THIRD_ADDRESS_CONFIG_NAME = "thirdAddr";
+    private static final String THIRD_PORT_CONFIG_NAME = "thirdPort";
+    private static final String FOURTH_ADDRESS_CONFIG_NAME = "fourthAddr";
+    private static final String FOURTH_PORT_CONFIG_NAME = "fourthPort";
 
-    private InetAddress localAddress;
-    private InetAddress predecessorAddr;
-    private InetAddress successorAddr;
+    private InetAddress localAddr;
+    private InetAddress secondAddr;
+    private InetAddress thirdAddr;
+    private InetAddress fourthAddr;
     private int localPort;
-    private int predecessorPort;
-    private int successorPort;
+    private int secondPort;
+    private int thirdPort;
+    private int fourthPort;
 
-    public InetAddress getPredecessorAddr() {
-        return predecessorAddr;
+
+    public GameNetConfiguration(InetAddress localAddr, InetAddress secondAddr, InetAddress thirdAddr,
+                                InetAddress fourthAddr, int localPort, int secondPort, int thirdPort,
+                                int fourthPort) {
+        this.localAddr = localAddr;
+        this.secondAddr = secondAddr;
+        this.thirdAddr = thirdAddr;
+        this.fourthAddr = fourthAddr;
+        this.localPort = localPort;
+        this.secondPort = secondPort;
+        this.thirdPort = thirdPort;
+        this.fourthPort = fourthPort;
     }
 
-    public void setPredecessorAddr(InetAddress predecessorAddr) {
-        this.predecessorAddr = predecessorAddr;
+    public void setLocalAddr(InetAddress localAddr) {
+        this.localAddr = localAddr;
     }
 
-    public InetAddress getSuccessorAddr() {
-        return successorAddr;
+    public void setSecondAddr(InetAddress secondAddr) {
+        this.secondAddr = secondAddr;
     }
 
-    public void setSuccessorAddr(InetAddress successorAddr) {
-        this.successorAddr = successorAddr;
+    public void setThirdAddr(InetAddress thirdAddr) {
+        this.thirdAddr = thirdAddr;
     }
 
-    public InetAddress getLocalAddress() {
-        return localAddress;
-    }
-
-    public void setLocalAddress(InetAddress localAddress) {
-        this.localAddress = localAddress;
-    }
-
-    public int getLocalPort() {
-        return localPort;
+    public void setFourthAddr(InetAddress fourthAddr) {
+        this.fourthAddr = fourthAddr;
     }
 
     public void setLocalPort(int localPort) {
         this.localPort = localPort;
     }
 
-    public int getPredecessorPort() {
-        return predecessorPort;
+    public void setSecondPort(int secondPort) {
+        this.secondPort = secondPort;
     }
 
-    public void setPredecessorPort(int predecessorPort) {
-        this.predecessorPort = predecessorPort;
+    public void setThirdPort(int thirdPort) {
+        this.thirdPort = thirdPort;
     }
 
-    public int getSuccessorPort() {
-        return successorPort;
+    public void setFourthPort(int fourthPort) {
+        this.fourthPort = fourthPort;
     }
 
-    public void setSuccessorPort(int successorPort) {
-        this.successorPort = successorPort;
+    public InetAddress getLocalAddr() {
+        return localAddr;
     }
 
-    public GameNetConfiguration(InetAddress p, InetAddress s, InetAddress h, int lport, int pport, int sport){
-        this.setPredecessorAddr(p);
-        this.setSuccessorAddr(s);
-        this.setLocalAddress(h);
-        this.setLocalPort(lport);
-        this.setPredecessorPort(pport);
-        this.setSuccessorPort(sport);
+    public InetAddress getSecondAddr() {
+        return secondAddr;
+    }
+
+    public InetAddress getThirdAddr() {
+        return thirdAddr;
+    }
+
+    public InetAddress getFourthAddr() {
+        return fourthAddr;
+    }
+
+    public int getLocalPort() {
+        return localPort;
+    }
+
+    public int getSecondPort() {
+        return secondPort;
+    }
+
+    public int getThirdPort() {
+        return thirdPort;
+    }
+
+    public int getFourthPort() {
+        return fourthPort;
     }
 
     public static GameNetConfiguration readConfigFromFile(String filename){
 
         BufferedReader in = null;
         String line;
-        InetAddress predecessor = null, successor = null, host = null;
-        int lport = 0, pport = 0, sport = 0;
+        InetAddress localp = null, secondp = null, thirdp = null, fourthp = null;
+        int lport = 0, sport = 0, tport = 0, fport = 0;
 
         try {
             in = new BufferedReader(new FileReader(filename));
@@ -98,23 +123,29 @@ public class GameNetConfiguration {
             {
                 System.out.println(line);
                 String[] data = line.split("=");
-                if(data[0].equals(PREDECESSOR_CONFIG_NAME)){
-                    predecessor = InetAddress.getByName(data[1]);
-                }
-                else if(data[0].equals(SUCCESSOR_CONFIG_NAME)){
-                    successor = InetAddress.getByName(data[1]);
-                }
-                else if(data[0].equals(LOCAL_CONFIG_NAME)){
-                    host = InetAddress.getByName(data[1]);
+                if(data[0].equals(LOCAL_ADDRESS_CONFIG_NAME)){
+                    localp = InetAddress.getByName(data[1]);
                 }
                 else if(data[0].equals(LOCAL_PORT_CONFIG_NAME)){
                     lport = Integer.parseInt(data[1]);
                 }
-                else if(data[0].equals(PREDECESSOR_PORT_CONFIG_NAME)){
-                    pport = Integer.parseInt(data[1]);
+                else if(data[0].equals(SECOND_ADDRESS_CONFIG_NAME)){
+                    secondp = InetAddress.getByName(data[1]);
                 }
-                else if(data[0].equals(SUCCESSOR_PORT_CONFIG_NAME)){
+                else if(data[0].equals(SECOND_PORT_CONFIG_NAME)){
                     sport = Integer.parseInt(data[1]);
+                }
+                else if(data[0].equals(THIRD_ADDRESS_CONFIG_NAME)){
+                    thirdp = InetAddress.getByName(data[1]);
+                }
+                else if(data[0].equals(THIRD_PORT_CONFIG_NAME)){
+                    tport = Integer.parseInt(data[1]);
+                }
+                else if(data[0].equals(FOURTH_ADDRESS_CONFIG_NAME)){
+                    fourthp = InetAddress.getByName(data[1]);
+                }
+                else if(data[0].equals(FOURTH_PORT_CONFIG_NAME)){
+                    fport = Integer.parseInt(data[1]);
                 }
             }
             in.close();
@@ -124,16 +155,18 @@ public class GameNetConfiguration {
             System.out.println("Error while reading from the network configuration file");
         }
 
-        return new GameNetConfiguration(predecessor, successor, host, lport, pport, sport);
+        return new GameNetConfiguration(localp, secondp, thirdp, fourthp, lport, sport, tport, fport);
     }
 
     @Override
     public String toString() {
-        return  "host address:          " + this.localAddress.getHostAddress() + '\n' +
+        return  "host address:          " + this.localAddr.getHostAddress() + '\n' +
                 "host port:             " + this.localPort + '\n' +
-                "predecessor address:   " + this.predecessorAddr.getHostAddress() + '\n' +
-                "predecessor port:      " + this.predecessorPort + '\n' +
-                "successor address:     " + this.successorAddr.getHostAddress() + '\n' +
-                "successor port:        " + this.successorPort;
+                "second player address:   " + this.secondAddr.getHostAddress() + '\n' +
+                "second player port:      " + this.secondPort + '\n' +
+                "third player address:     " + this.thirdAddr.getHostAddress() + '\n' +
+                "third player port:        " + this.thirdPort +'\n' +
+                "fourth player address:     " + this.fourthAddr.getHostAddress() + '\n' +
+                "fourth player port:        " + this.fourthPort;
     }
 }
