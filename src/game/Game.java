@@ -1,44 +1,69 @@
-/*
- *  Created by raj.srivastava on 26/03/15
- */
-
 package game;
 
-import baseModel.enums.Color;
 
 import java.util.Stack;
 
 public class Game
 {
-    private Board         board1;
-    private Board         board2;
-    private Stack<String> moves;
+    private Board board;
+    private Player whitePlayer;
+    private Player blackPlayer;
+    private Player goldenPlayer;
+    private Player copperPlayer;
+    private Stack<Move> moves;
 
-    public Game()
-    {
+    public Game(Player white, Player black, Player golden, Player copper){
+        whitePlayer = white;
+        blackPlayer = black;
+        goldenPlayer = golden;
+        copperPlayer = copper;
+        moves = new Stack<Move>();
+        board = new Board();
     }
 
-    public Game(String team1Name, String team2Name, String t1WName, String t1BName, String t2WName, String t2BName)
-    {
-        Team team1 = new Team(team1Name);
-        Team team2 = new Team(team2Name);
-
-        Player t1wp = new Player(Color.WHITE, t1WName, team1);
-        Player t1bp = new Player(Color.BLACK, t1BName, team1);
-        Player t2wp = new Player(Color.WHITE, t2WName, team2);
-        Player t2bp = new Player(Color.BLACK, t2BName, team2);
-
-        board1 = new Board(t1wp, t2bp);
-        board2 = new Board(t2wp, t1bp);
-
-        moves = new Stack<String>();
+    public boolean addMove(Move m){
+        if(!isPossibleMove(m)){
+            return false;
+        }
+        executeMove(m);
+        moves.push(m);
+        return true;
     }
 
-    public void addMove(Color color, String move)
-    {
-        if(color.equals(Color.WHITE))
-            moves.push(moves.size() + 1 + ". " + move);
-        else
-            moves.push(moves.pop() + " " + move);
+    private boolean isPossibleMove(Move m){
+        if(!m.isPossible())
+            return false;
+        Piece newLocationP = this.board.getSquare(m.getNewLocation()).getPiece();
+        if(newLocationP == null){
+            return true;
+        }
+        if(newLocationP.getColor().equals(m.getPiece().getColor())) {
+            return false;
+        }
+        return true;
+    }
+
+    private void executeMove(Move m){
+        Square oldSquare = this.board.getSquare(m.getOldLocation());
+        Square newSquare = this.board.getSquare(m.getNewLocation());
+        Piece newLocationP = newSquare.getPiece();
+        if(newLocationP != null) {
+            switch (newLocationP.getColor()){
+                case BLACK:
+                    blackPlayer.removePiece(newLocationP);
+                    break;
+                case WHITE:
+                    whitePlayer.removePiece(newLocationP);
+                    break;
+                case GOLDEN:
+                    goldenPlayer.removePiece(newLocationP);
+                    break;
+                case COPPER:
+                    copperPlayer.removePiece(newLocationP);
+                    break;
+            }
+        }
+        oldSquare.setPiece(null);
+        newSquare.setPiece(m.getPiece());
     }
 }

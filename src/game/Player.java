@@ -2,6 +2,7 @@ package game;
 
 
 import game.enums.Color;
+import game.enums.PieceName;
 import game.enums.PlayerState;
 
 import java.util.ArrayList;
@@ -51,12 +52,7 @@ public class Player
     //Methods
     private static List<Piece> initializePieces(Color c) {
         List<Piece> list = new ArrayList<Piece>();
-        /*//Add 8 pawns
-        for(int i = 0; i < 8; ++i){
-            Piece pawn = new Piece(Type.PAWN, , , c)
-            list.add(pawn);
-        }
-        Piece rook = new Piece(Type.ROOK, , ,c)*/
+
         return list;
     }
 
@@ -70,8 +66,13 @@ public class Player
         availablePieces.add(piece);
     }
 
-    public void removePiece(Piece piece)
-    {
+    public void removePiece(Piece piece) {
         availablePieces.remove(piece);
+        if(piece.getPieceName().equals(PieceName.KING)){
+            availablePieces.clear();
+        }
+        if(availablePieces.isEmpty()){
+            this.state = PlayerState.SURRENDERED;
+        }
     }
 }
