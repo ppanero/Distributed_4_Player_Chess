@@ -1,6 +1,6 @@
 package network;
 
-import Utils.LogUtils;
+import utils.LogUtils;
 
 import java.io.*;
 import java.net.DatagramPacket;
