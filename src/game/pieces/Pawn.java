@@ -5,20 +5,20 @@ import java.util.Arrays;
 
 public class Pawn extends Piece{
 	//These arrays are the moves for the pawns if they haven't already moved
-	private static final Move[] movesP1NotMoved = {new Move(-2, 0), new Move(-1, 0)};
+	private final Move[] movesP1NotMoved = {new Move(-2, 0, this), new Move(-1, 0, this)};
 	//These arrays are for every move after the initial move
-	private static final Move[] movesP1HasMoved = {new Move(-1, 0)};
-	private static final Move[] movesP2NotMoved = {new Move(2, 0), new Move(1, 0)};
-	private static final Move[] movesP2HasMoved = {new Move(1, 0)};
-	private static final Move[] movesP3NotMoved = {new Move(0, -2), new Move(0, -1)};
-	private static final Move[] movesP3HasMoved = {new Move(0, -1)};
-	private static final Move[] movesP4NotMoved = {new Move(0, 2), new Move(0, 1)};
-	private static final Move[] movesP4HasMoved = {new Move(0, 1)};
+	private final Move[] movesP1HasMoved = {new Move(-1, 0, this)};
+	private final Move[] movesP2NotMoved = {new Move(2, 0, this), new Move(1, 0, this)};
+	private final Move[] movesP2HasMoved = {new Move(1, 0, this)};
+	private final Move[] movesP3NotMoved = {new Move(0, -2, this), new Move(0, -1, this)};
+	private final Move[] movesP3HasMoved = {new Move(0, -1, this)};
+	private final Move[] movesP4NotMoved = {new Move(0, 2, this), new Move(0, 1, this)};
+	private final Move[] movesP4HasMoved = {new Move(0, 1, this)};
 	//These arrays contain the moves for attacking
-	private static final Move[] attacksP1 = {new Move(-1, -1), new Move(-1, 1)};
-	private static final Move[] attacksP2 = {new Move(1, -1), new Move(1, 1)};
-	private static final Move[] attacksP3 = {new Move(1, -1), new Move(-1, -1)};
-	private static final Move[] attacksP4 = {new Move(1, 1), new Move(-1, 1)};
+	private final Move[] attacksP1 = {new Move(-1, -1, this), new Move(-1, 1, this)};
+	private final Move[] attacksP2 = {new Move(1, -1, this), new Move(1, 1, this)};
+	private final Move[] attacksP3 = {new Move(1, -1, this), new Move(-1, -1, this)};
+	private final Move[] attacksP4 = {new Move(1, 1, this), new Move(-1, 1, this)};
 	
 	/**
 	 * Creates a pawn associated to the player's number

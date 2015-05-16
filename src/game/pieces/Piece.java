@@ -1,10 +1,11 @@
 package game.pieces;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public abstract class Piece {
+public abstract class Piece implements Serializable{
 	
 	public enum PlayerNum{
 		ONE, TWO, THREE, FOUR, EMPTY

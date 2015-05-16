@@ -1,15 +1,14 @@
 package game.graphics;
 
-import java.awt.Graphics;
-import java.awt.Image;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
-import javax.swing.JComponent;
+import javax.swing.*;
 
-public class BoardPanel extends JComponent{
+public class BoardPanel extends JPanel{
 
 	/**
 	 * The scale of the board
@@ -34,7 +33,9 @@ public class BoardPanel extends JComponent{
     		boardFile = new File("./Images/ChessBoard2.png");
     	}
         boardImage = ImageIO.read(boardFile);
+
     }
+
     @Override
     protected void paintComponent(Graphics g) {
         g.drawImage(boardImage.getScaledInstance(size * 14, size * 14, Image.SCALE_SMOOTH), 0, 0, null);

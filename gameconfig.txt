@@ -1,5 +1,5 @@
-localAddr=192.168.1.1
-localPort=50001
+localPlayerAddr=192.168.1.1
+localPlayerPort=50001
 secondPlayerAddr=192.168.1.2
 secondPlayerPort=50001
 thirdPlayerAddr=192.168.1.3

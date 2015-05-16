@@ -14,14 +14,14 @@ import java.net.InetAddress;
  */
 public class GameNetConfiguration {
 
-    private static final String LOCAL_ADDRESS_CONFIG_NAME = "localAddr";
-    private static final String LOCAL_PORT_CONFIG_NAME = "localPort";
-    private static final String SECOND_ADDRESS_CONFIG_NAME = "secondAddr";
-    private static final String SECOND_PORT_CONFIG_NAME = "secondPort";
-    private static final String THIRD_ADDRESS_CONFIG_NAME = "thirdAddr";
-    private static final String THIRD_PORT_CONFIG_NAME = "thirdPort";
-    private static final String FOURTH_ADDRESS_CONFIG_NAME = "fourthAddr";
-    private static final String FOURTH_PORT_CONFIG_NAME = "fourthPort";
+    private static final String LOCAL_ADDRESS_CONFIG_NAME = "localPlayerAddr";
+    private static final String LOCAL_PORT_CONFIG_NAME = "localPlayerPort";
+    private static final String SECOND_ADDRESS_CONFIG_NAME = "secondPlayerAddr";
+    private static final String SECOND_PORT_CONFIG_NAME = "secondPlayerPort";
+    private static final String THIRD_ADDRESS_CONFIG_NAME = "thirdPlayerAddr";
+    private static final String THIRD_PORT_CONFIG_NAME = "thirdPlayerPort";
+    private static final String FOURTH_ADDRESS_CONFIG_NAME = "fourthPlayerAddr";
+    private static final String FOURTH_PORT_CONFIG_NAME = "fourthPlayerPort";
 
     private InetAddress localAddr;
     private InetAddress secondAddr;
@@ -149,6 +149,10 @@ public class GameNetConfiguration {
                 }
             }
             in.close();
+            localp = InetAddress.getLocalHost();
+            secondp = InetAddress.getLocalHost();
+            thirdp = InetAddress.getLocalHost();
+            fourthp = InetAddress.getLocalHost();
         } catch (FileNotFoundException e) {
             System.out.println("The file " + filename + " was not found");
         } catch (IOException e) {

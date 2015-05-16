@@ -1,39 +1,35 @@
 package game.graphics;
 
-import java.awt.BorderLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import javax.swing.JComponent;
-import javax.swing.JFrame;
-import javax.swing.JLayeredPane;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-import javax.swing.JOptionPane;
+import javax.swing.*;
 
-import game.graphics.PiecePanel;
+import game.control.Chess;
+import game.pieces.Move;
 import game.pieces.Piece.PlayerNum;
 import game.control.Board;
 import game.control.Player;
 
-public class Interface extends JFrame {
+public class GraphicInterface extends JFrame {
 
 	private static final int BOARD_LAYER = 0;
 	private static final int PIECE_LAYER = 1;
 	private static final int HIGHLIGHTED_LAYER = 2;
 	private PiecePanel[][] myGrid;
 	private HighlightedPanel[][] myHighlighted;
-	private JLayeredPane pane;
-	private static final int SQUARE_SIZE = 50;
+	private JScrollPane pane;
+	private static final int SQUARE_SIZE = 30;
 	private static final long serialVersionUID = -3023440964932623825L;
 	private Highlighted[][] initializeHighlighted;
 	private Board board;
-	private static boolean extraGame;
+    private boolean isTurn = false;
+    private Player currentPlayer = null;
+    private Player lastPlayer = null;
+    private Chess chessController;
 
 	public enum Highlighted {
 		BLANK, YELLOW, RED;
@@ -46,38 +42,40 @@ public class Interface extends JFrame {
 	 */
 	private class MyMouseListener implements MouseListener {
 		
-		Player currentPlayer = null;
-		Player lastPlayer = null;
-		
 		@Override
 		public void mouseClicked(MouseEvent event) {
-			int x = event.getX();
-			int y = event.getY();
-			// on each click, determines if king of current player is in check,
-			// opens dialog box if true.
-			ArrayList<PlayerNum> myList = new ArrayList<PlayerNum>();
-			myList = board.getPlayersInCheck();
-			
-			lastPlayer = currentPlayer;
-			currentPlayer = board.getCurrentPlayer();
-			if (currentPlayer != lastPlayer && myList.contains(board.getCurrentPlayer().getPlayerNum())) {
-				JOptionPane
-						.showMessageDialog(Interface.this,
-								"You HAVE to move out of check. Come on. It's really the best move.");
-			}
-			// passes x and y coordinates to drawHighlighted, which returns
-			// array of available moves.
-			try{
-				drawHighlighted(board.selectLocation((x / SQUARE_SIZE),(y / SQUARE_SIZE)));
-				drawPiecesAndRepaint();
-				// on each mouseclick, checks if game is over
-				if (board.isGameOver()) {
-					JOptionPane.showMessageDialog(Interface.this, "gg");
-					Interface.this.createNewGame();
-				}
-			}catch(IOException ioe){
-				System.err.println(ioe.toString());
-			}
+            if(isTurn) {
+                int x = event.getX();
+                int y = event.getY();
+                // on each click, determines if king of current player is in check,
+                // opens dialog box if true.
+                ArrayList<PlayerNum> myList = new ArrayList<PlayerNum>();
+                myList = board.getPlayersInCheck();
+
+                lastPlayer = currentPlayer;
+                currentPlayer = board.getCurrentPlayer();
+                if (currentPlayer != lastPlayer && myList.contains(board.getCurrentPlayer().getPlayerNum())) {
+                    JOptionPane
+                            .showMessageDialog(GraphicInterface.this,
+                                    "You are in CHECK! so move to stay alive!");
+                }
+                // passes x and y coordinates to drawHighlighted, which returns
+                // array of available moves.
+                try {
+                    drawHighlighted(board.selectLocation((x / SQUARE_SIZE), (y / SQUARE_SIZE)));
+                    drawPiecesAndRepaint();
+                    // on each mouseclick, checks if game is over
+                    if (board.isGameOver()) {
+                        JOptionPane.showMessageDialog(GraphicInterface.this, "Game over");
+                        GraphicInterface.this.createNewGame();
+                    }
+                } catch (IOException ioe) {
+                    System.err.println(ioe.toString());
+                }
+            }
+            else{
+                JOptionPane.showMessageDialog(GraphicInterface.this, "Not your turn yet, WAIT");
+            }
 		}
 
 		@Override
@@ -101,95 +99,89 @@ public class Interface extends JFrame {
 		}
 	}
 
+    /**
+     * Sets up the chess game controller to the view
+     * @param controller
+     */
+    public void setChessController(Chess controller){
+        chessController = controller;
+    }
+
 	/**
 	 * creates new board instance, creates and prepares jpane for game.
 	 * @throws IOException
 	 */
-	public Interface() throws IOException {
+	public GraphicInterface() throws IOException {
 		// creates a new board for four player chess
-		board = new Board(4, 4);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		// creates menubar menus
-		JMenu newGameMenu = new JMenu("New Game");
-		JMenu GameOptionMenu = new JMenu("Want a challenge?");
-		// creates menu options
-		JMenuItem fourPlayerMI = new JMenuItem("4 Player");
-		JMenuItem MattAndCaleb = new JMenuItem("Play with extra pieces...");
-		JMenuItem RegularPieces = new JMenuItem(
-				"Play with regular pieces (boring)");
-		// adds options to menus
-		newGameMenu.add(fourPlayerMI);
-		GameOptionMenu.add(MattAndCaleb);
-		GameOptionMenu.add(RegularPieces);
-
-		this.setLayout(new BorderLayout());
-
-		// creates menu bar, adds menus
-		JMenuBar bar = new JMenuBar();
-		bar.add(newGameMenu);
-		bar.add(GameOptionMenu);
-
-		// when NewGame option selected, calls the createNewGame method.
-		fourPlayerMI.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent event) {
-				try {
-					createNewGame();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-			}
-		});
-		// if ExtraPieces selected, sets ExtraGame to true
-		MattAndCaleb.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent event) {
-				extraGame = true;
-				try {
-					createNewGame();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-			}
-		});
-		// If Boring pieces selected, set ExtraGame to false
-		RegularPieces.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent event) {
-				extraGame = false;
-				try {
-					createNewGame();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-			}
-		});
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setLayout(new GridLayout());
+        board = new Board(4, 4);
+        JPanel boardImage = new BoardPanel(4, SQUARE_SIZE);
+        boardImage.addMouseListener(new MyMouseListener());
+        boardImage.setOpaque(false);
+        boardImage.setBounds(0, 0, SQUARE_SIZE * 14, SQUARE_SIZE * 14);
+        boardImage.setPreferredSize(new Dimension(SQUARE_SIZE * 14, SQUARE_SIZE * 14));
+        boardImage.setEnabled(true);
 
 		// creates new pane for pieces, highlighted squares to be drawn to
-		this.pane = new JLayeredPane();
-		pane.setBounds(0, 0, SQUARE_SIZE * 14 + 10, SQUARE_SIZE * 14 + 10);
-		getContentPane().add(bar, BorderLayout.NORTH);
-		getContentPane().add(pane, BorderLayout.CENTER);
-		// adds boardImage to jpane, adds mouselistener, and sets bounds
-		JComponent boardImage = new BoardPanel(4, SQUARE_SIZE);
-		boardImage.addMouseListener(new MyMouseListener());
-		boardImage.setOpaque(true);
+		pane = new JScrollPane();
+        pane.setPreferredSize(new Dimension(SQUARE_SIZE * 14, SQUARE_SIZE * 14));
+        pane.setEnabled(true);
 		pane.add(boardImage, new Integer(BOARD_LAYER), 0);
-		boardImage.setBounds(0, 0, SQUARE_SIZE * 14, SQUARE_SIZE * 14);
+        getContentPane().add(pane);
 
 		// initializes all comparison arrays, draws pieces to board
 		initializePieces();
 		initializeHighlighted();
 		createBlankHighlighted();
 		redraw();
-
 		pack();
-		setSize(SQUARE_SIZE * 14 + 5, SQUARE_SIZE * 14 + 50);
-		setResizable(false);
+		setPreferredSize(new Dimension(SQUARE_SIZE * 14, SQUARE_SIZE * 14 + 20));
+		setResizable(true);
 		setVisible(true);
+        setEnabled(true);
 	}
 
-	/**
+    /**
+     * Tells the graphical interface to perform a movement
+     * @param own - if its the players move or the oponents' one
+     * @param move - the move to perform
+     */
+    public void executeMove(boolean own, Move move){
+        if(own){
+            JOptionPane.showMessageDialog(GraphicInterface.this, "Your turn! MOVE");
+            isTurn = true;
+        }
+        else{
+            int x = move.getX();
+            int y = move.getY();
+            // on each click, determines if king of current player is in check,
+            // opens dialog box if true.
+            ArrayList<PlayerNum> myList = new ArrayList<PlayerNum>();
+            myList = board.getPlayersInCheck();
+
+            lastPlayer = currentPlayer;
+            currentPlayer = board.getCurrentPlayer();
+            if (currentPlayer != lastPlayer && myList.contains(board.getCurrentPlayer().getPlayerNum())) {
+                JOptionPane.showMessageDialog(GraphicInterface.this, "You are in CHECK! so move to stay alive!");
+            }
+            // passes x and y coordinates to drawHighlighted, which returns
+            // array of available moves.
+            try{
+                drawHighlighted(board.selectLocation((x / SQUARE_SIZE),(y / SQUARE_SIZE)));
+                drawPiecesAndRepaint();
+                // on each mouseclick, checks if game is over
+                if (board.isGameOver()) {
+                    JOptionPane.showMessageDialog(GraphicInterface.this, "Game over");
+                    GraphicInterface.this.createNewGame();
+                }
+            }catch(IOException ioe){
+                System.err.println(ioe.toString());
+            }
+        }
+    }
+
+    /**
 	 * creates an array used to remove all highlighted squares from pane by comparison
 	 */
 	private void createBlankHighlighted() {
@@ -314,6 +306,8 @@ public class Interface extends JFrame {
 						} else {
 							piece = new PiecePanel(board.getPiece(x, y),
 									SQUARE_SIZE);
+                            isTurn = false;
+                            this.chessController.addMove(new Move(x,y,piece.getPiece()));
 						}
 						//adds to pane
 						pane.remove(myGrid[x][y]);
@@ -360,15 +354,13 @@ public class Interface extends JFrame {
 		}
 	}
 
-	
-
-	/**
-	 * Returns value of "ExtraGame" variable. used when checking if
-	 * "special pieces" are to be used.
-	 * 
-	 * @return true if special pieces are to be used
-	 */
-	public static boolean isExtraGame() {
-		return extraGame;
-	}
+    /**
+     * Starts the graphical interface
+     */
+    public void startGI(){
+        javax.swing.SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+            }
+        });
+    }
 }

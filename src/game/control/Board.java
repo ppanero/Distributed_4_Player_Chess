@@ -2,7 +2,7 @@ package game.control;
 
 import game.pieces.Piece;
 import game.pieces.*;
-import game.graphics.Interface.Highlighted;
+import game.graphics.GraphicInterface.Highlighted;
 import game.pieces.Piece.PlayerNum;
 import javax.swing.JOptionPane;
 import java.util.ArrayList;
@@ -241,7 +241,6 @@ public class Board {
 		//Otherwise, if a piece is selected and it's showing it's available moves, then allow clicking on their moves
 		else {
 			if(currentPlayer.inCheck()){
-				
 			}
 			if (availableMoves[x][y] == true) {
 				Piece oldPiece = board[x][y];

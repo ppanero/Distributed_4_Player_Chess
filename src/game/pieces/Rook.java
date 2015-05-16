@@ -6,8 +6,8 @@ import java.util.Arrays;
 
 public class Rook extends Piece{
 	
-	private static final Move[] moves = {new Move(1, 0, true), new Move(-1, 0, true),
-										new Move(0, 1, true), new Move(0, -1, true)};
+	private final Move[] moves = {new Move(1, 0, true, this), new Move(-1, 0, true, this),
+										new Move(0, 1, true, this), new Move(0, -1, true, this)};
 	public Rook(PlayerNum player) {
 		super(player);
 		moveSet = new ArrayList<Move>(Arrays.asList(moves));

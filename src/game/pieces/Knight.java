@@ -6,10 +6,10 @@ import java.util.Arrays;
 
 public class Knight extends Piece{
 	
-	private static final Move[] moves = {new Move(2, 1), new Move(2, -1), 
-										new Move(-2, 1), new Move(-2, -1), 
-										new Move(1, 2), new Move(-1, 2), 
-										new Move(1, -2), new Move(-1, -2)};
+	private final Move[] moves = {new Move(2, 1, this), new Move(2, -1, this),
+										new Move(-2, 1, this), new Move(-2, -1, this),
+										new Move(1, 2, this), new Move(-1, 2, this),
+										new Move(1, -2, this), new Move(-1, -2, this)};
 	public Knight(PlayerNum player){
 		super(player);
 		moveSet = new ArrayList<Move>(Arrays.asList(moves));

@@ -27,7 +27,7 @@ import java.util.concurrent.*;
 
 public class GameNode<T> extends Thread{
 	
-	public static final int MAX_BUFFER = 1024;
+	public static final int MAX_BUFFER = 2048;
     public static final String GAME_CONFIGURATION_FILENAME = "gameconfig.txt";
     //30 seconds minutes (30 * 1000 = 5 seconds) in order for a message to be considered failed
     public static final long TIME_TO_FAILURE = 10;
@@ -42,6 +42,7 @@ public class GameNode<T> extends Thread{
     private boolean hasToken;
     private List<GameFrame<T>> ackPendingGameframes;
     private BlockingQueue<T> sendPendingObjects;
+    private BlockingQueue<T> receivePendingObjects;
     private ScheduledExecutorService scheduledExecutorService;
 	
 	public GameNode(int id){
@@ -55,6 +56,7 @@ public class GameNode<T> extends Thread{
             this.hasToken = false;
             this.ackPendingGameframes = new ArrayList<GameFrame<T>>();
             this.sendPendingObjects = new ArrayBlockingQueue<T>(6);
+            this.receivePendingObjects = new ArrayBlockingQueue<T>(6);
             this.scheduledExecutorService = Executors.newScheduledThreadPool(3);
             this.receiving = true;
             //log
@@ -135,6 +137,23 @@ public class GameNode<T> extends Thread{
         this.switchReceiving();
     }
 
+    public void communicateMessage(T msg){
+        try {
+            this.sendPendingObjects.put(msg);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public T pullMove() {
+        try {
+            return receivePendingObjects.take();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public void run() {
         //Log
         LogUtils.log("Game node " + this.id + " started", LogUtils.RING_NODE_LOG_FILENAME);
@@ -207,7 +226,7 @@ public class GameNode<T> extends Thread{
             }
         }, 20, 20, TimeUnit.SECONDS);
 
-        //Receiver og game frames. It deletes the ack from their pending list and acks other players frames
+        //Receiver of game frames. It deletes the ack from their pending list and acks other players frames
         this.scheduledExecutorService.execute(new Runnable() {
             @Override
             public void run() {
@@ -247,6 +266,7 @@ public class GameNode<T> extends Thread{
 
                         } else {
                             //Perform action and acknowledge
+                            receivePendingObjects.put((T) frame.getMessage());
                             sendAck(frame);
                             //Log
                             LogUtils.log("Acknowledge sent", LogUtils.FD_NODE_LOG_FILENAME);
@@ -256,6 +276,8 @@ public class GameNode<T> extends Thread{
                 } catch (ClassNotFoundException e) {
                     e.printStackTrace();
                 } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             }

@@ -1,8 +1,68 @@
-Failure detection node created with id: 789
+Failure detection node created with id: 1
 host address:          192.168.2.5
-host port:             50000
+host port:             50003
 predecessor address:   192.168.2.5
-predecessor port:      50002
+predecessor port:      50003
 successor address:     192.168.2.5
-successor port:        50001
-FD node 789 started
+successor port:        50003
+FD node 1 started
+Frame received
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@11bf3b2d
+Acknowledge sent
+Frame received
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@44d2479d
+Acknowledge sent
+Frame received
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@7d7cb4ff
+Acknowledge received
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@7d7cb4ff
+Frame received
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@64f11b6
+Acknowledge sent
+Frame received
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@16003fe5
+Acknowledge received
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@16003fe5
+Frame received
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@6a62deab
+Acknowledge received
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@6a62deab
+Frame received
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@76d26a
+Acknowledge sent
+Frame received
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@4cd1063b
+Acknowledge sent
+Frame received
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@16c8b5a6
+Acknowledge sent
+Frame received
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@436de121
+Acknowledge received
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@436de121
+Frame received
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@55419644
+Acknowledge received
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@55419644
+Frame received
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@f36dac0
+Acknowledge received
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@f36dac0

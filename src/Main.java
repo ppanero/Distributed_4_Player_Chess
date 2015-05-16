@@ -1,21 +1,32 @@
-import network.FDNode;
-import network.GameNode;
+import game.control.Chess;
+import game.graphics.GraphicInterface;
 
-import java.util.Scanner;
+import java.io.IOException;
+
 
 public class Main {
 
     public static void main(String[] args) {
-        Scanner keyboard = new Scanner(System.in);
-        System.out.println("enter an integer");
-        int i = keyboard.nextInt();
-        FDNode n = new FDNode(i);
-            n.start();
+        try {
+            final Chess controller = new Chess();
+            GraphicInterface fpchess = new GraphicInterface();
+            fpchess.setChessController(controller);
+            controller.setGI(fpchess);
 
-        int exit = keyboard.nextInt();
-        while(exit!=0){
-            exit = keyboard.nextInt();
+            fpchess.addWindowListener(new java.awt.event.WindowAdapter() {
+                @Override
+                public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+                    controller.stopGame();
+                    System.exit(0);
+                }
+            });
+
+            fpchess.startGI();
+            controller.start();
+
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        n.stopNode();
+
     }
 }

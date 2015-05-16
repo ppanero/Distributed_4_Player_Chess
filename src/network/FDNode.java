@@ -120,7 +120,7 @@ public class FDNode extends Thread{
                 LogUtils.log("Successor heartbeat sent", LogUtils.FD_NODE_LOG_FILENAME);
                 System.out.println("Successor heartbeat sent");
             }
-        }, 5, 5, TimeUnit.SECONDS);
+        }, 20, 20, TimeUnit.SECONDS);
 
         //Failure checker for the ExecutorService (executed each 5 minutes)
         this.scheduledExecutorService.scheduleAtFixedRate(new Runnable() {
@@ -152,7 +152,7 @@ public class FDNode extends Thread{
                     System.out.println("Failure checker finished: no failures detected");
                 }
             }
-        }, 20, 20, TimeUnit.SECONDS);
+        }, 60, 60, TimeUnit.SECONDS);
 
         //Receiver of the heartbeats and acknowledges to them
         this.scheduledExecutorService.execute(new Runnable() {

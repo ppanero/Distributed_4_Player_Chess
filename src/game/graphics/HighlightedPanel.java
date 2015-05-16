@@ -1,6 +1,6 @@
 package game.graphics;
 
-import game.graphics.Interface.Highlighted;
+import game.graphics.GraphicInterface.Highlighted;
 
 import java.awt.Graphics;
 import java.awt.Image;
