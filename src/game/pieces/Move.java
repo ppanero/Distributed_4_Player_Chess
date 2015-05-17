@@ -13,7 +13,17 @@ public class Move implements Serializable{
 	 * Y coordinate of the pawn
 	 */
 	private int y;
-	
+
+    /**
+     * previous X coordinate
+     */
+    private int prex;
+
+    /**
+     * previous Y coordinate
+     */
+	private int prey;
+
 	/**
 	 * A tag for the types of pieces that can technically move infinitely. They're moves are only stopped by boundaries or a piece on their team
 	 */
@@ -25,6 +35,14 @@ public class Move implements Serializable{
 
     private Piece piece;
 
+    public Move(){
+        this.prex = 0;
+        this.prey = 0;
+        this.x = 0;
+        this.y = 0;
+        this.piece = null;
+        this.infinite = false;
+    }
 	/**
 	 * Creates a move for a piece at the designated locations. This constructor is for pawns, knights, and kings
 	 * @param x x component of the move
@@ -57,7 +75,11 @@ public class Move implements Serializable{
 	public int getX(){
 		return x;
 	}
-	
+
+    public void setX(int x){
+        this.x = x;
+    }
+
 	/**
 	 * returns the y-coordinate of the move
 	 * @return y
@@ -66,6 +88,27 @@ public class Move implements Serializable{
 		return y;
 	}
 
+    public void setY(int y){
+        this.y = y;
+    }
+
+    public int getPrex(){
+        return prex;
+    }
+
+    public void setPrex(int px){
+        this.prex = px;
+    }
+
+    public int getPrey(){
+        return prey;
+    }
+
+    public void setPrey(int py){
+        this.prey = py;
+    }
+
+
     /**
      * returns the piece being moved
      * @return piece
@@ -73,7 +116,11 @@ public class Move implements Serializable{
     public Piece getPiece(){
         return piece;
     }
-	
+
+    public void setPiece(Piece p){
+        this.piece = p;
+    }
+
 	/**
 	 * Returns whether or not the move is infinite
 	 * @return infinite

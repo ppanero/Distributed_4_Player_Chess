@@ -30,6 +30,7 @@ public class GraphicInterface extends JFrame {
     private Player currentPlayer = null;
     private Player lastPlayer = null;
     private Chess chessController;
+    private Move moveToSend;
 
 	public enum Highlighted {
 		BLANK, YELLOW, RED;
@@ -62,6 +63,12 @@ public class GraphicInterface extends JFrame {
                 // passes x and y coordinates to drawHighlighted, which returns
                 // array of available moves.
                 try {
+                    //if(x == 12 &&  y == 8)
+                    if(myGrid[x / SQUARE_SIZE][y /SQUARE_SIZE] != null && myGrid[x / SQUARE_SIZE][y /SQUARE_SIZE].getPiece() != null
+                            && moveToSend.getPrex() == 0 && moveToSend.getPrey() == 0){
+                        moveToSend.setPrex(x / SQUARE_SIZE);
+                        moveToSend.setPrey(y /SQUARE_SIZE);
+                    }
                     drawHighlighted(board.selectLocation((x / SQUARE_SIZE), (y / SQUARE_SIZE)));
                     drawPiecesAndRepaint();
                     // on each mouseclick, checks if game is over
@@ -112,6 +119,8 @@ public class GraphicInterface extends JFrame {
 	 * @throws IOException
 	 */
 	public GraphicInterface() throws IOException {
+
+        moveToSend = new Move();
 		// creates a new board for four player chess
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLayout(new GridLayout());
@@ -306,11 +315,18 @@ public class GraphicInterface extends JFrame {
 						} else {
 							piece = new PiecePanel(board.getPiece(x, y),
 									SQUARE_SIZE);
-                            this.chessController.addMove(new Move(x,y,piece.getPiece()));
+                            if(moveToSend.getPrex() != 0 && moveToSend.getPrey() != 0){
+                                moveToSend.setX(x);
+                                moveToSend.setY(y);
+                                moveToSend.setPiece(piece.getPiece());
+                            }
+                            this.chessController.addMove(moveToSend);
+                            moveToSend.setPrey(0);
+                            moveToSend.setPrex(0);
                             isTurn = false;
 						}
 						//adds to pane
-						pane.remove(myGrid[x][y]);
+                        pane.remove(myGrid[x][y]);
 						myGrid[x][y] = piece;
 						piece.setBounds(i, j, SQUARE_SIZE, SQUARE_SIZE);
 						pane.add(piece, new Integer(PIECE_LAYER), 0);

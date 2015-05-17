@@ -1,13 +1,8 @@
 package database;
 
-
-import com.mchange.v2.c3p0.ComboPooledDataSource;
-import game.graphics.PiecePanel;
 import game.pieces.*;
 
 import javax.sql.DataSource;
-import java.beans.PropertyVetoException;
-import java.sql.Connection;
 
 
 public class DatabaseManager {
@@ -89,7 +84,11 @@ public class DatabaseManager {
         return true;
     }
 
-    //Main to test database manager
+    public void updatePiece(Move move){
+        dbMapper.update(move);
+    }
+
+    /*Main to test database manager
     public static void main(String[] args)
     {
         ComboPooledDataSource cpds = new ComboPooledDataSource();
@@ -109,6 +108,6 @@ public class DatabaseManager {
         ds = cpds;
         DatabaseManager dm = new DatabaseManager(ds);
         dm.initializeDatabase();
-    }
+    }*/
 
 }
