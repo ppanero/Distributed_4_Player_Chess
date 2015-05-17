@@ -13,5 +13,11 @@ public class Rook extends Piece{
 		moveSet = new ArrayList<Move>(Arrays.asList(moves));
 		imageFile += "Rook.png";
 	}
+
+
+    @Override
+    public int getType(){
+        return 1;
+    }
 	
 }

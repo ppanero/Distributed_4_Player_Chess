@@ -16,4 +16,10 @@ public class Knight extends Piece{
 		imageFile += "Knight.png";
 	}
 
+
+    @Override
+    public int getType(){
+        return 2;
+    }
+
 }

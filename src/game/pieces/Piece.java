@@ -1,5 +1,7 @@
 package game.pieces;
 
+import game.control.Player;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -8,7 +10,37 @@ import java.util.Map;
 public abstract class Piece implements Serializable{
 	
 	public enum PlayerNum{
-		ONE, TWO, THREE, FOUR, EMPTY
+		ONE, TWO, THREE, FOUR, EMPTY;
+
+        public static PlayerNum getPlayerNum(int num){
+            switch (num){
+                case 1:
+                    return ONE;
+                case 2:
+                    return TWO;
+                case 3:
+                    return THREE;
+                case 4:
+                    return FOUR;
+                default:
+                    return EMPTY;
+            }
+        }
+
+        public static int toInt(PlayerNum pn){
+            switch (pn){
+                case ONE:
+                    return 1;
+                case TWO:
+                    return 2;
+                case THREE:
+                    return 3;
+                case FOUR:
+                    return 4;
+                default:
+                    return -1;
+            }
+        }
 	}
 	
 	/**
@@ -68,6 +100,13 @@ public abstract class Piece implements Serializable{
 	public String getImageFileName(){
 		return imageFile;
 	}
+
+    /**
+     * Returns the type of piece
+     */
+    public int getType(){
+        return -1;
+    }
 	
 	/**
 	 * 
@@ -82,4 +121,5 @@ public abstract class Piece implements Serializable{
 		playerMap.put(PlayerNum.EMPTY, "blank");
 		return playerMap;
 	}
+
 }

@@ -15,4 +15,9 @@ public class Bishop extends Piece{
 		imageFile += "Bishop.png";
 	}
 
+
+    @Override
+    public int getType(){
+        return 3;
+    }
 }

@@ -17,4 +17,10 @@ public class Queen extends Piece{
 		imageFile += "Queen.png";
 	}
 
+
+    @Override
+    public int getType(){
+        return 5;
+    }
+
 }

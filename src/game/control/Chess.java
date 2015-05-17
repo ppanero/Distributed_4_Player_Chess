@@ -26,7 +26,7 @@ public class Chess extends Thread{
         playerNum = keyboard.nextInt();
         gnode =  new GameNode<Move>(playerNum);
         fdnode = new FDNode(playerNum);
-        ownMove = new ArrayBlockingQueue<Move>(1);
+        ownMove = new ArrayBlockingQueue<Move>(225);
     }
 
     public  void addMove(Move m){
@@ -49,6 +49,7 @@ public class Chess extends Thread{
     public void stopGame(){
         gnode.stopNode();
         fdnode.stopNode();
+        playing = false;
     }
 
     public void setGI(GraphicInterface gi){
@@ -60,24 +61,24 @@ public class Chess extends Thread{
         fdnode.start();
 
         //If node is equal to 1 start the game and move
-        if (playerNum == 0) {
+        if (playerNum == 1) {
             fpchess.executeMove(true, move);
             //Communicate movement to the rest
             gnode.communicateMessage(waitForMove());
             isTurn++;
         }
-        else{
-            isTurn = playerNum;
-        }
+        isTurn = playerNum;
 
         while (playing) {
 
             //If not wait for the movements
-            while (isTurn < 4) {
+            while (isTurn < 5) {
                 move = gnode.pullMove();
                 if (move != null) {
                     fpchess.executeMove(false, move);
-                    isTurn++;
+                    if (move.getPiece() != null){
+                        isTurn++;
+                    }
                 }
             }
             //Move
@@ -85,7 +86,7 @@ public class Chess extends Thread{
             //Communicate movement to the rest
             gnode.communicateMessage(waitForMove());
             //Wait again
-            isTurn = 0;
+            isTurn = 1;
         }
     }
 }

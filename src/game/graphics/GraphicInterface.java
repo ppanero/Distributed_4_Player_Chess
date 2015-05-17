@@ -306,8 +306,8 @@ public class GraphicInterface extends JFrame {
 						} else {
 							piece = new PiecePanel(board.getPiece(x, y),
 									SQUARE_SIZE);
-                            isTurn = false;
                             this.chessController.addMove(new Move(x,y,piece.getPiece()));
+                            isTurn = false;
 						}
 						//adds to pane
 						pane.remove(myGrid[x][y]);
