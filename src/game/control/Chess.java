@@ -67,15 +67,18 @@ public class Chess extends Thread{
             gnode.communicateMessage(waitForMove());
             isTurn++;
         }
-        isTurn = playerNum;
+        else{
+            isTurn = playerNum % 4;
+        }
 
         while (playing) {
 
             //If not wait for the movements
-            while (isTurn < 5) {
+            while (isTurn < 4) {
                 move = gnode.pullMove();
                 if (move != null) {
                     fpchess.executeMove(false, move);
+                    System.out.println(move.toString());
                     if (move.getPiece() != null){
                         isTurn++;
                     }

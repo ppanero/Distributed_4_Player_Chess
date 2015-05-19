@@ -1,3 +1,6 @@
 Manifest-Version: 1.0
+Class-Path: c3p0-oracle-thin-extras-0.9.5.jar mchange-commons-java-0.2
+ .9.jar mysql-connector-java-5.1.35-bin.jar c3p0-0.9.5.jar mchange-com
+ mons-java-0.2.9.jar common-lang3.jar
 Main-Class: Main
 

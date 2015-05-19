@@ -128,4 +128,14 @@ public class Move implements Serializable{
 	public boolean infinite(){
 		return infinite;
 	}
+
+    @Override
+    public String toString(){
+        if(piece != null)
+            return "Piece " +  piece.getType() + " from " + piece.getPlayerNum() + " moves from x = " + x + " y = " + y +
+                    " to x = " + prex + " y = " + prey;
+        else
+            return "Null piece moves from x = " + x + " y = " + y +
+                    " to x = " + prex + " y = " + prey;
+    }
 }

@@ -1,0 +1,15 @@
+<component name="ArtifactManager">
+  <artifact name="fpchess:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/</output-path>
+    <root id="root">
+      <element id="archive" name="Distributed_4_Player_Chess.jar">
+        <element id="module-output" name="Distributed_4_Player_Chess" />
+      </element>
+      <element id="library" level="project" name="c3p0-oracle-thin-extras-0.9.5" />
+      <element id="library" level="project" name="mysql-connector-java-5.1.35-bin" />
+      <element id="library" level="project" name="c3p0-0.9.5" />
+      <element id="library" level="project" name="mchange-commons-java-0.2.9" />
+      <element id="library" level="project" name="common-lang3" />
+    </root>
+  </artifact>
+</component>

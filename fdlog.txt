@@ -1,61 +1,38 @@
 Failure detection node created with id: 1
-host address:          192.168.2.5
+host address:          192.168.2.4
 host port:             50003
-predecessor address:   192.168.2.5
+predecessor address:   192.168.2.4
 predecessor port:      50003
-successor address:     192.168.2.5
+successor address:     192.168.2.4
 successor port:        50003
 FD node 1 started
-Game message failure checker started
-Game message failure checker finished: no failures detected
-Frame sent
-Heartbeat frame: 1431883485912 from: 192.168.2.5 , 50003 to: 192.168.2.5 , 50003
-Predecessor heartbeat sent
-Frame sent
-Heartbeat frame: 1431883485929 from: 192.168.2.5 , 50003 to: 192.168.2.5 , 50003
-Successor heartbeat sent
 Frame received
-Heartbeat frame: 1431883485912 from: 192.168.2.5 , 50003 to: 192.168.2.5 , 50003
-Frame sent
-Heartbeat frame: 1431883485912 from: 192.168.2.5 , 50003 to: 192.168.2.5 , 50003
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 12 y = 8
 Acknowledge sent
 Frame received
-Heartbeat frame: 1431883485929 from: 192.168.2.5 , 50003 to: 192.168.2.5 , 50003
-Frame sent
-Heartbeat frame: 1431883485929 from: 192.168.2.5 , 50003 to: 192.168.2.5 , 50003
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 12 y = 8
 Acknowledge sent
 Frame received
-Heartbeat frame: 1431883485912 from: 192.168.2.5 , 50003 to: 192.168.2.5 , 50003
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 12 y = 8
 Acknowledge received
-node address: 192.168.2.5 timestamp 1431883485912
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 12 y = 8
 Frame received
-Heartbeat frame: 1431883485929 from: 192.168.2.5 , 50003 to: 192.168.2.5 , 50003
-Acknowledge received
-node address: 192.168.2.5 timestamp 1431883485929
-Frame received
-Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
-Message: game.pieces.Move@1b3977a3
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 12 y = 8
 Acknowledge sent
 Frame received
-Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
-Message: game.pieces.Move@608d0839
-Frame received
-Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
-Message: game.pieces.Move@42d858b9
-Acknowledge sent
-Frame received
-Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
-Message: game.pieces.Move@4b9ac4c9
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 12 y = 8
 Acknowledge received
-Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
-Message: game.pieces.Move@4b9ac4c9
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 12 y = 8
 Frame received
-Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
-Message: game.pieces.Move@1ded8ee6
-Acknowledge sent
-Frame received
-Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
-Message: game.pieces.Move@5acd1ffe
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 12 y = 8
 Acknowledge received
-Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
-Message: game.pieces.Move@5acd1ffe
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 12 y = 8

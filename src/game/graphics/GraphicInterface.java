@@ -63,7 +63,6 @@ public class GraphicInterface extends JFrame {
                 // passes x and y coordinates to drawHighlighted, which returns
                 // array of available moves.
                 try {
-                    //if(x == 12 &&  y == 8)
                     if(myGrid[x / SQUARE_SIZE][y /SQUARE_SIZE] != null && myGrid[x / SQUARE_SIZE][y /SQUARE_SIZE].getPiece() != null
                             && moveToSend.getPrex() == 0 && moveToSend.getPrey() == 0){
                         moveToSend.setPrex(x / SQUARE_SIZE);
@@ -162,30 +161,40 @@ public class GraphicInterface extends JFrame {
             isTurn = true;
         }
         else{
-            int x = move.getX();
-            int y = move.getY();
-            // on each click, determines if king of current player is in check,
-            // opens dialog box if true.
-            ArrayList<PlayerNum> myList = new ArrayList<PlayerNum>();
-            myList = board.getPlayersInCheck();
-
-            lastPlayer = currentPlayer;
-            currentPlayer = board.getCurrentPlayer();
-            if (currentPlayer != lastPlayer && myList.contains(board.getCurrentPlayer().getPlayerNum())) {
-                JOptionPane.showMessageDialog(GraphicInterface.this, "You are in CHECK! so move to stay alive!");
-            }
-            // passes x and y coordinates to drawHighlighted, which returns
-            // array of available moves.
-            try{
-                drawHighlighted(board.selectLocation((x / SQUARE_SIZE),(y / SQUARE_SIZE)));
-                drawPiecesAndRepaint();
-                // on each mouseclick, checks if game is over
-                if (board.isGameOver()) {
-                    JOptionPane.showMessageDialog(GraphicInterface.this, "Game over");
-                    GraphicInterface.this.createNewGame();
+            for(int i = 0; i < 2; ++i){
+                int x;
+                int y;
+                if(i == 0) {
+                    x = move.getPrex();
+                    y = move.getPrey();
                 }
-            }catch(IOException ioe){
-                System.err.println(ioe.toString());
+                else{
+                    x = move.getX();
+                    y = move.getY();
+                }
+                // on each click, determines if king of current player is in check,
+                // opens dialog box if true.
+                ArrayList<PlayerNum> myList = new ArrayList<PlayerNum>();
+                myList = board.getPlayersInCheck();
+
+                lastPlayer = currentPlayer;
+                currentPlayer = board.getCurrentPlayer();
+                if (currentPlayer != lastPlayer && myList.contains(board.getCurrentPlayer().getPlayerNum())) {
+                    JOptionPane.showMessageDialog(GraphicInterface.this, "You are in CHECK! so move to stay alive!");
+                }
+                // passes x and y coordinates to drawHighlighted, which returns
+                // array of available moves.
+                try{
+                    drawHighlighted(board.selectLocation(x,y));
+                    drawPiecesAndRepaint();
+                    // on each mouseclick, checks if game is over
+                    if (board.isGameOver()) {
+                        JOptionPane.showMessageDialog(GraphicInterface.this, "Game over");
+                        GraphicInterface.this.createNewGame();
+                    }
+                }catch(IOException ioe){
+                    System.err.println(ioe.toString());
+                }
             }
         }
     }
@@ -228,7 +237,6 @@ public class GraphicInterface extends JFrame {
 				else
 					//else, fetches piece type, creates new piece pane, adds to grid
 					temp = new PiecePanel(board.getPiece(x, y), SQUARE_SIZE);
-
 				myGrid[x][y] = temp;
 			}
 			y = 0;
@@ -315,15 +323,16 @@ public class GraphicInterface extends JFrame {
 						} else {
 							piece = new PiecePanel(board.getPiece(x, y),
 									SQUARE_SIZE);
-                            if(moveToSend.getPrex() != 0 && moveToSend.getPrey() != 0){
-                                moveToSend.setX(x);
-                                moveToSend.setY(y);
-                                moveToSend.setPiece(piece.getPiece());
+                            if(isTurn){
+                                if(moveToSend.getPrex() != 0 && moveToSend.getPrey() != 0){
+                                    moveToSend.setX(x);
+                                    moveToSend.setY(y);
+                                    moveToSend.setPiece(piece.getPiece());
+                                }
+                                this.chessController.addMove(moveToSend);
+                                moveToSend =  new Move();
+                                isTurn = false;
                             }
-                            this.chessController.addMove(moveToSend);
-                            moveToSend.setPrey(0);
-                            moveToSend.setPrex(0);
-                            isTurn = false;
 						}
 						//adds to pane
                         pane.remove(myGrid[x][y]);

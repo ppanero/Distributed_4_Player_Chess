@@ -58,8 +58,13 @@ public class GameFrame<T> extends DataFrame{
 
     @Override
     public String toString(){
-        return  "Frame from: " + this.sourceAddr.getHostAddress() + " , " + this.getSourcePort() +
+        if(this.message != null)
+            return  "Frame from: " + this.sourceAddr.getHostAddress() + " , " + this.getSourcePort() +
                 " to:   " + this.getDestinationAddr() + " , " + this.getDestinationPort() + '\n' +
                 "Message: " + this.message.toString();
+        else
+            return  "Frame from: " + this.sourceAddr.getHostAddress() + " , " + this.getSourcePort() +
+                    " to:   " + this.getDestinationAddr() + " , " + this.getDestinationPort() + '\n' +
+                    "Null message";
     }
 }

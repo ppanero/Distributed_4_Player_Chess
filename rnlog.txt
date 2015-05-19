@@ -1228,3 +1228,473 @@ Message: game.pieces.Move@4c0eef89
 Frame sent
 Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
 Message: game.pieces.Move@1ded8ee6
+Ring node initiated with id: 1
+host address:          192.168.2.5
+host port:             50001
+second player address:   192.168.2.5
+second player port:      50001
+third player address:     192.168.2.5
+third player port:        50001
+fourth player address:     192.168.2.5
+fourth player port:        50001
+Game node 1 started
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@286048c0
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@286048c0
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@286048c0
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@32513f84
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@1d949d4b
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@540153b9
+Ring node initiated with id: 1
+host address:          192.168.2.5
+host port:             50001
+second player address:   192.168.2.5
+second player port:      50001
+third player address:     192.168.2.5
+third player port:        50001
+fourth player address:     192.168.2.5
+fourth player port:        50001
+Game node 1 started
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@14100767
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@14100767
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@14100767
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@13eeba25
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@2e9842c2
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@a3e667
+Ring node initiated with id: 1
+host address:          192.168.2.5
+host port:             50001
+second player address:   192.168.2.5
+second player port:      50001
+third player address:     192.168.2.5
+third player port:        50001
+fourth player address:     192.168.2.5
+fourth player port:        50001
+Game node 1 started
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@5aca9864
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@5aca9864
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@5aca9864
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@7e63aeeb
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@927eadd
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@19ff6d62
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@5aca9864
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@711c664
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@5aca9864
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@5aca9864
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@5aca9864
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@7f364454
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@464f4a8f
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@218a968b
+Ring node initiated with id: 1
+host address:          192.168.2.5
+host port:             50001
+second player address:   192.168.2.5
+second player port:      50001
+third player address:     192.168.2.5
+third player port:        50001
+fourth player address:     192.168.2.5
+fourth player port:        50001
+Game node 1 started
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@6183c20b
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@28ae083a
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@6183c20b
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@6183c20b
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@56260f26
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@5f88a4e9
+Ring node initiated with id: 1
+host address:          192.168.2.5
+host port:             50001
+second player address:   192.168.2.5
+second player port:      50001
+third player address:     192.168.2.5
+third player port:        50001
+fourth player address:     192.168.2.5
+fourth player port:        50001
+Game node 1 started
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@2ded1e04
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@17c0d4d0
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@2ded1e04
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@2ded1e04
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@381eb067
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@5d742726
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@2ded1e04
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@27174693
+Ring node initiated with id: 1
+host address:          192.168.2.5
+host port:             50001
+second player address:   192.168.2.5
+second player port:      50001
+third player address:     192.168.2.5
+third player port:        50001
+fourth player address:     192.168.2.5
+fourth player port:        50001
+Game node 1 started
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@32513f84
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@32513f84
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@32513f84
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@4c469ca0
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@21c22eaf
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@2da1cf72
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@32513f84
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@31753a5a
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@32513f84
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@32513f84
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@67d6b1e2
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@32513f84
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@175c977f
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: game.pieces.Move@593f85a
+Ring node initiated with id: 1
+host address:          192.168.2.5
+host port:             50001
+second player address:   192.168.2.5
+second player port:      50001
+third player address:     192.168.2.5
+third player port:        50001
+fourth player address:     192.168.2.5
+fourth player port:        50001
+Game node 1 started
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 0 y = 0
+Frame sent
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 0 y = 0
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 0 y = 0
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 0 y = 0
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 0 y = 0
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 0 y = 0
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 0 y = 0
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 0 y = 0
+Ring node initiated with id: 1
+host address:          192.168.2.5
+host port:             50001
+second player address:   192.168.2.5
+second player port:      50001
+third player address:     192.168.2.5
+third player port:        50001
+fourth player address:     192.168.2.5
+fourth player port:        50001
+Game node 1 started
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 0 y = 0
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 0 y = 0
+Frame sent
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 0 y = 0
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 0 y = 0
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 0 y = 0
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 0 y = 0
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 0 y = 0
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 0 y = 0
+Ring node initiated with id: 1
+host address:          192.168.2.5
+host port:             50001
+second player address:   192.168.2.5
+second player port:      50001
+third player address:     192.168.2.5
+third player port:        50001
+fourth player address:     192.168.2.5
+fourth player port:        50001
+Game node 1 started
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 0 y = 0
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 0 y = 0
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 0 y = 0
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 0 y = 0
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 0 y = 0
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 0 y = 0
+Ring node initiated with id: 1
+host address:          192.168.2.5
+host port:             50001
+second player address:   192.168.2.5
+second player port:      50001
+third player address:     192.168.2.5
+third player port:        50001
+fourth player address:     192.168.2.5
+fourth player port:        50001
+Game node 1 started
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 12 y = 8
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 12 y = 8
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 12 y = 8
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 12 y = 8
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 12 y = 8
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 12 y = 8
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 12 y = 8
+Frame sent
+Frame from: 192.168.2.5 , 50001 to:   Macky.local/192.168.2.5 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 12 y = 8
+Ring node initiated with id: 1
+host address:          192.168.2.4
+host port:             50001
+second player address:   192.168.2.4
+second player port:      50001
+third player address:     192.168.2.4
+third player port:        50001
+fourth player address:     192.168.2.4
+fourth player port:        50001
+Game node 1 started
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 12 y = 8
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 12 y = 8
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 12 y = 8
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 12 y = 8
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 12 y = 8
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 12 y = 8
+Ring node initiated with id: 1
+host address:          192.168.2.4
+host port:             50001
+second player address:   192.168.2.4
+second player port:      50001
+third player address:     192.168.2.4
+third player port:        50001
+fourth player address:     192.168.2.4
+fourth player port:        50001
+Game node 1 started
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 12 y = 8
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 12 y = 8
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 12 y = 8
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 12 y = 8
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 12 y = 8
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 12 y = 8
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 12 y = 8
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 12 y = 8
+Ring node initiated with id: 1
+host address:          192.168.2.4
+host port:             50001
+second player address:   192.168.2.4
+second player port:      50001
+third player address:     192.168.2.4
+third player port:        50001
+fourth player address:     192.168.2.4
+fourth player port:        50001
+Game node 1 started
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 12 y = 8
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 12 y = 8
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 12 y = 8
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 12 y = 8
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 12 y = 8
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 12 y = 8
+Ring node initiated with id: 1
+host address:          192.168.2.4
+host port:             50001
+second player address:   192.168.2.4
+second player port:      50001
+third player address:     192.168.2.4
+third player port:        50001
+fourth player address:     192.168.2.4
+fourth player port:        50001
+Game node 1 started
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 12 y = 8
+Frame sent
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 12 y = 8
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 12 y = 8
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 12 y = 8
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 12 y = 8
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 12 y = 8

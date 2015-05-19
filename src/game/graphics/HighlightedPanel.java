@@ -41,7 +41,7 @@ public class HighlightedPanel extends JComponent{
 		//This code is kind of like a loading bar. It lets the user know what highlighted pieces are being loaded in
 		//in the console window as they are loaded
 		if(piece == Highlighted.BLANK){
-			System.out.println("Highlighted ./Images/Objects/" + "BlankSquare.png");
+			//System.out.println("Highlighted ./Images/Objects/" + "BlankSquare.png");
 			this.pieceImageFile = new File ("./Images/Objects/" + "BlankSquare.png");
 		}else if(piece == Highlighted.YELLOW){
 			System.out.println("Highlighted ./Images/Objects/" + "HighlightedSquare.png");
