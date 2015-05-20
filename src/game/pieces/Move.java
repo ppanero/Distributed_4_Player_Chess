@@ -36,10 +36,10 @@ public class Move implements Serializable{
     private Piece piece;
 
     public Move(){
-        this.prex = 0;
-        this.prey = 0;
-        this.x = 0;
-        this.y = 0;
+        this.prex = -1;
+        this.prey = -1;
+        this.x = -1;
+        this.y = -1;
         this.piece = null;
         this.infinite = false;
     }

@@ -199,7 +199,7 @@ public abstract class AbstractMapper<T,K> {
      * @param conditions - QueryCondition[]
      * @return conditionsStr - String[]
      */
-	private String[] getWhereCondition(QueryCondition[] conditions) {
+    protected String[] getWhereCondition(QueryCondition[] conditions) {
 		String[] conditionsStr = new String[conditions.length];
 		for(int i = 0; i < conditionsStr.length; i++)
 			conditionsStr[i] = conditions[i].getColumnName() + " " + conditions[i].getOperator().toString() +" ?";
@@ -211,7 +211,7 @@ public abstract class AbstractMapper<T,K> {
 	 * @param key
 	 * @return
 	 */
-	private QueryCondition[] getConditionsFromKey(K key) {
+    protected QueryCondition[] getConditionsFromKey(K key) {
 		String[] keyColumNames = getKeyColumnNames();
 		QueryCondition[] conditions = new QueryCondition [getKeyColumnNames().length];
 		Object[] columnValues = serializeKey(key);

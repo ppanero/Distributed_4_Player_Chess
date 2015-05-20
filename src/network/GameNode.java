@@ -1,6 +1,7 @@
 package network;
 
 import Utils.LogUtils;
+import game.pieces.Move;
 
 import java.io.*;
 import java.net.DatagramPacket;
@@ -55,9 +56,9 @@ public class GameNode<T> extends Thread{
             this.running = true;
             this.hasToken = false;
             this.ackPendingGameframes = new ArrayList<GameFrame<T>>();
-            this.sendPendingObjects = new ArrayBlockingQueue<T>(6);
-            this.receivePendingObjects = new ArrayBlockingQueue<T>(6);
-            this.scheduledExecutorService = Executors.newScheduledThreadPool(3);
+            this.sendPendingObjects = new ArrayBlockingQueue<T>(10);
+            this.receivePendingObjects = new ArrayBlockingQueue<T>(10);
+            this.scheduledExecutorService = Executors.newScheduledThreadPool(4);
             this.receiving = true;
             //log
             LogUtils.log("Ring node initiated with id: " + this.id, LogUtils.RING_NODE_LOG_FILENAME);
@@ -115,9 +116,9 @@ public class GameNode<T> extends Thread{
 	
 	//Make a new token frame send it on
 	public void makeToken(){
-        DataFrame frame = new DataFrame(this.gameConfig.getSecondPort(),this.gameConfig.getSecondAddr(),
+        DataFrame frame = new GameFrame<Move>(this.gameConfig.getSecondPort(),this.gameConfig.getSecondAddr(),
                 this.gameConfig.getLocalPort(), this.gameConfig.getLocalAddr());
-        sendFrame(frame);
+        sendToken(frame);
 	}
 	
 	//stop the node from receiving
@@ -170,16 +171,19 @@ public class GameNode<T> extends Thread{
                         GameFrame<T> secondPlayerFrame = new GameFrame<T>(gameConfig.getSecondPort(), gameConfig.getSecondAddr(),
                                 gameConfig.getLocalPort(), gameConfig.getLocalAddr(), obj, System.currentTimeMillis(), nextMsgId());
                         sendFrame(secondPlayerFrame);
+                        System.out.println(secondPlayerFrame);
                         ackPendingGameframes.add(secondPlayerFrame);
                         //Send frame to the second player
                         GameFrame<T> thirdPlayerFrame = new GameFrame<T>(gameConfig.getThirdPort(), gameConfig.getThirdAddr(),
                                 gameConfig.getLocalPort(), gameConfig.getLocalAddr(), obj, System.currentTimeMillis(), nextMsgId());
                         sendFrame(thirdPlayerFrame);
+                        System.out.println(thirdPlayerFrame);
                         ackPendingGameframes.add(thirdPlayerFrame);
                         //Send frame to the second player
                         GameFrame<T> fourthPlayerFrame = new GameFrame<T>(gameConfig.getFourthPort(), gameConfig.getFourthAddr(),
                                 gameConfig.getLocalPort(), gameConfig.getLocalAddr(), obj, System.currentTimeMillis(), nextMsgId());
                         sendFrame(fourthPlayerFrame);
+                        System.out.println(fourthPlayerFrame);
                         ackPendingGameframes.add(fourthPlayerFrame);
 
                     } catch (InterruptedException iex) {
@@ -197,7 +201,7 @@ public class GameNode<T> extends Thread{
                 //in the past 5 minutes (max temp for a player to move)
                 //Log
                 LogUtils.log("Game message failure checker started", LogUtils.FD_NODE_LOG_FILENAME);
-                System.out.println("Game Message failure checker started");
+                //System.out.println("Game Message failure checker started");
                 int count = 0;
                 for (GameFrame<T> gf: ackPendingGameframes) {
                     long gfTimestamp = gf.getTimestamp() + GameNode.TIME_TO_FAILURE;
@@ -215,16 +219,16 @@ public class GameNode<T> extends Thread{
                         LogUtils.log("Message failure detected. Heartbeat not acknowledge after " + GameNode.TIME_TO_FAILURE
                                 , LogUtils.FD_NODE_LOG_FILENAME);
                         LogUtils.log(gf.toString(), LogUtils.FD_NODE_LOG_FILENAME);
-                        System.out.println("Game message failure detected");
+                        //System.out.println("Game message failure detected");
                     }
                 }
                 if(count == 0){
                     //Log
                     LogUtils.log("Game message failure checker finished: no failures detected", LogUtils.FD_NODE_LOG_FILENAME);
-                    System.out.println("Game message failure checker finished: no failures detected");
+                    //System.out.println("Game message failure checker finished: no failures detected");
                 }
             }
-        }, 20, 20, TimeUnit.SECONDS);
+        }, 10, 10, TimeUnit.SECONDS);
 
         //Receiver of game frames. It deletes the ack from their pending list and acks other players frames
         this.scheduledExecutorService.execute(new Runnable() {
@@ -244,7 +248,7 @@ public class GameNode<T> extends Thread{
                         //Log
                         LogUtils.log("Frame received", LogUtils.FD_NODE_LOG_FILENAME);
                         LogUtils.log(frame.toString(), LogUtils.FD_NODE_LOG_FILENAME);
-                        System.out.println("Frame received");
+                        //System.out.println("Frame received");
 
                         if (frame.getAck()) {
                             //Remove frame from list of acknowledges pending
@@ -254,11 +258,11 @@ public class GameNode<T> extends Thread{
                                 //that have a timestamp lower or equal to the heartbeat (later heartbeats
                                 //will have to be acknowledge again.
                                 while (!ackPendingGameframes.isEmpty() && ackPendingGameframes.remove(frame))
-                                    System.out.println(ackPendingGameframes.toString());
+                                    //System.out.println(ackPendingGameframes.toString());
                                 //Log
                                 LogUtils.log("Acknowledge received", LogUtils.FD_NODE_LOG_FILENAME);
                                 LogUtils.log(frame.toString(), LogUtils.FD_NODE_LOG_FILENAME);
-                                System.out.println("Acknowledge received");
+                                //System.out.println("Acknowledge received");
                             } else {
                                 //Log
                                 LogUtils.log("ERROR: ack pending list is empty", LogUtils.RING_NODE_LOG_FILENAME);
@@ -270,7 +274,7 @@ public class GameNode<T> extends Thread{
                             sendAck(frame);
                             //Log
                             LogUtils.log("Acknowledge sent", LogUtils.FD_NODE_LOG_FILENAME);
-                            System.out.println("Acknowledge sent");
+                            //System.out.println("Acknowledge sent");
                         }
                     }
                 } catch (ClassNotFoundException e) {

@@ -64,7 +64,7 @@ public class GraphicInterface extends JFrame {
                 // array of available moves.
                 try {
                     if(myGrid[x / SQUARE_SIZE][y /SQUARE_SIZE] != null && myGrid[x / SQUARE_SIZE][y /SQUARE_SIZE].getPiece() != null
-                            && moveToSend.getPrex() == 0 && moveToSend.getPrey() == 0){
+                            && moveToSend.getPrex() == -1 && moveToSend.getPrey() == -1){
                         moveToSend.setPrex(x / SQUARE_SIZE);
                         moveToSend.setPrey(y /SQUARE_SIZE);
                     }
@@ -161,16 +161,19 @@ public class GraphicInterface extends JFrame {
             isTurn = true;
         }
         else{
+            Move aux = new Move(move.getX(), move.getY(), move.getPiece());
+            aux.setPrex(move.getPrex());
+            aux.setPrey(move.getPrey());
             for(int i = 0; i < 2; ++i){
                 int x;
                 int y;
                 if(i == 0) {
-                    x = move.getPrex();
-                    y = move.getPrey();
+                    x = aux.getPrex();
+                    y = aux.getPrey();
                 }
                 else{
-                    x = move.getX();
-                    y = move.getY();
+                    x = aux.getX();
+                    y = aux.getY();
                 }
                 // on each click, determines if king of current player is in check,
                 // opens dialog box if true.
@@ -324,12 +327,13 @@ public class GraphicInterface extends JFrame {
 							piece = new PiecePanel(board.getPiece(x, y),
 									SQUARE_SIZE);
                             if(isTurn){
-                                if(moveToSend.getPrex() != 0 && moveToSend.getPrey() != 0){
+                                if(moveToSend.getPrex() != -1 && moveToSend.getPrey() != -1){
                                     moveToSend.setX(x);
                                     moveToSend.setY(y);
                                     moveToSend.setPiece(piece.getPiece());
                                 }
-                                this.chessController.addMove(moveToSend);
+                                Move aux = moveToSend;
+                                this.chessController.addMove(aux);
                                 moveToSend =  new Move();
                                 isTurn = false;
                             }

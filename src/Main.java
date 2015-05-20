@@ -34,6 +34,7 @@ public class Main {
             GraphicInterface fpchess = new GraphicInterface();
             fpchess.setChessController(controller);
             controller.setGI(fpchess);
+            controller.setDB(dm);
 
             fpchess.addWindowListener(new java.awt.event.WindowAdapter() {
                 @Override

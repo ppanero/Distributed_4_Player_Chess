@@ -1,5 +1,6 @@
 package game.control;
 
+import database.DatabaseManager;
 import game.graphics.GraphicInterface;
 import game.pieces.Move;
 import network.FDNode;
@@ -17,8 +18,9 @@ public class Chess extends Thread{
     private int playerNum = 0;
     private FDNode fdnode;
     private GameNode<Move> gnode;
-    private GraphicInterface fpchess;
     private BlockingQueue<Move> ownMove;
+    private GraphicInterface fpchess;
+    private DatabaseManager db;
 
     public Chess(){
         Scanner keyboard = new Scanner(System.in);
@@ -27,6 +29,7 @@ public class Chess extends Thread{
         gnode =  new GameNode<Move>(playerNum);
         fdnode = new FDNode(playerNum);
         ownMove = new ArrayBlockingQueue<Move>(225);
+        isTurn = playerNum % 4;
     }
 
     public  void addMove(Move m){
@@ -56,19 +59,50 @@ public class Chess extends Thread{
         fpchess = gi;
     }
 
+    public void setDB(DatabaseManager dm){
+        this.db = dm;
+    }
     public void run() {
         gnode.start();
         fdnode.start();
 
-        //If node is equal to 1 start the game and move
-        if (playerNum == 1) {
+        /*if (playerNum == 1) {
             fpchess.executeMove(true, move);
             //Communicate movement to the rest
             gnode.communicateMessage(waitForMove());
-            isTurn++;
+            gnode.makeToken();
+
         }
-        else{
-            isTurn = playerNum % 4;
+
+        while (playing) {
+
+            //If not wait for the movements
+            while (!isTurn) {
+                move = gnode.pullMove();
+                if (move != null) {
+                    fpchess.executeMove(false, move);
+                    System.out.println(move.toString());
+                }
+                else{
+                    isTurn=true;
+                }
+            }
+            //Move
+            fpchess.executeMove(true, move);
+            //Communicate movement to the rest
+            gnode.communicateMessage(waitForMove());
+            gnode.
+            //Wait again
+            isTurn = false;*/
+
+        //If node is equal to 0 start the game and move
+        if (isTurn == 0) {
+            fpchess.executeMove(true, move);
+            //Communicate movement to the rest
+            Move m = waitForMove();
+            db.updatePiece(m);
+            gnode.communicateMessage(m);
+            isTurn++;
         }
 
         while (playing) {
@@ -77,6 +111,7 @@ public class Chess extends Thread{
             while (isTurn < 4) {
                 move = gnode.pullMove();
                 if (move != null) {
+                    db.updatePiece(move);
                     fpchess.executeMove(false, move);
                     System.out.println(move.toString());
                     if (move.getPiece() != null){
@@ -87,7 +122,9 @@ public class Chess extends Thread{
             //Move
             fpchess.executeMove(true, move);
             //Communicate movement to the rest
-            gnode.communicateMessage(waitForMove());
+            Move m = waitForMove();
+            db.updatePiece(m);
+            gnode.communicateMessage(m);
             //Wait again
             isTurn = 1;
         }

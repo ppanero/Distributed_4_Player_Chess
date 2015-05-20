@@ -1,6 +1,10 @@
 package database;
 
 import game.pieces.*;
+import org.apache.commons.lang3.StringUtils;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -85,7 +89,8 @@ public class MoveMapper extends AbstractMapper<Move, String> {
 
 	@Override
 	protected Object[] serializeKey(String key) {
-		String[] aux = {key};
+        String[] spkey = key.split(",");
+		String[] aux = {spkey[0],spkey[1],spkey[2],spkey[3]};
 		return aux;
 	}
 
@@ -106,8 +111,53 @@ public class MoveMapper extends AbstractMapper<Move, String> {
 		return aux;
 	}
 
+    /**
+     * Metodo para realizar el statement update
+     * @param objeto - T objeto a actualizar
+     */
+    public void update(Move objeto) {
+        Connection con        = null;
+        PreparedStatement pst = null;
+        try {
+            con = ds.getConnection();
+            String[] columnNames = getColumnNames();
+            String[] assignments = new String[columnNames.length];
+            for(int i = 0; i < assignments.length;i++)
+                assignments[i] = columnNames[i] + " = ? ";
+            QueryCondition[] conditions = super.getConditionsFromKey(getKeyFromUpdatedObject(objeto));
+            String[] whereCondition = super.getWhereCondition(conditions);
 
-	@Override
+            String sql = "UPDATE " + getTableName() + " SET " + StringUtils.join(assignments, ", ")
+                    + " WHERE " + StringUtils.join(whereCondition, " AND ");
+            pst = con.prepareStatement(sql);
+            Object[] objectsFields = serializeObject(objeto);
+            int j = 1;
+            for(int i = 0; i < columnNames.length; i++) {
+                pst.setObject(j, objectsFields[i]);
+                j++;
+            }
+            for(int i = 0; i < getKeyColumnNames().length; i++) {
+                pst.setObject(j, conditions[i].getValue());
+                j++;
+            }
+            pst.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (pst != null) pst.close();
+                if (con != null) con.close();
+            } catch (Exception e) {}
+        }
+    }
+
+    private String getKeyFromUpdatedObject(Move objeto) {
+        return objeto.getPrex() + "," + objeto.getPrey() + "," + objeto.getPiece().getType() + "," + Piece.PlayerNum.toInt(objeto.getPiece().getPlayerNum());
+
+    }
+
+
+    @Override
 	protected String getIncrementalColumnName() {
 		return null;
 	}

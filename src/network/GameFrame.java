@@ -67,4 +67,14 @@ public class GameFrame<T> extends DataFrame{
                     " to:   " + this.getDestinationAddr() + " , " + this.getDestinationPort() + '\n' +
                     "Null message";
     }
+
+    @Override
+    public boolean equals(Object other){
+        if (other == null) return false;
+        if (other == this) return true;
+        if (!(other instanceof GameFrame))return false;
+        GameFrame otherGameFrame = (GameFrame)other;
+        return this.sourceAddr.equals(otherGameFrame.sourceAddr) &&
+                this.destinationAddr.equals(otherGameFrame.destinationAddr);
+    }
 }
