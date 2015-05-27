@@ -19,7 +19,7 @@ public class DBConnector {
         public DBConnector(){
             this.connection = null;
             this.dbUser = "root"; // Usuario por defecto.
-            this.dbPassword = "bAtsDUpX"; // MySQL, not database password
+            this.dbPassword = "toor"; // MySQL, not database password
         }
 
         public boolean connectDB() throws ConnectionFailure {

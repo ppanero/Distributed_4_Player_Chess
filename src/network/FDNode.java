@@ -24,8 +24,8 @@ public class FDNode extends Thread{
 
     public static final int MAX_BUFFER = 1024;
     public static final String NETWORK_CONFIGURATION_FILENAME = "netconfig.txt";
-    //5 minutes (5 * 1000 = 5 seconds * 60 = 300000) in order for a node to be considered failed
-    public static final long TIME_TO_FAILURE = 10;
+    //1 minute (60 * 1000 = 60 seconds) in order for a node to be considered failed
+    public static final long TIME_TO_FAILURE = 60*1000;
 
     private int id;
     private boolean failureDetected;
@@ -120,7 +120,7 @@ public class FDNode extends Thread{
                 LogUtils.log("Successor heartbeat sent", LogUtils.FD_NODE_LOG_FILENAME);
                 //System.out.println("Successor heartbeat sent");
             }
-        }, 20, 20, TimeUnit.SECONDS);
+        }, 30, 30, TimeUnit.SECONDS);
 
         //Failure checker for the ExecutorService (executed each 5 minutes)
         this.scheduledExecutorService.scheduleAtFixedRate(new Runnable() {
@@ -130,7 +130,7 @@ public class FDNode extends Thread{
                 //in the past 5 minutes (max temp for a player to move)
                 //Log
                 LogUtils.log("Failure checker started", LogUtils.FD_NODE_LOG_FILENAME);
-                //System.out.println("Failure checker started");
+                System.out.println("Failure checker started");
                 int count = 0;
                 for (Heartbeat h : pendingHeartbeats) {
                     long hTimestamp = h.getTimestamp() + FDNode.TIME_TO_FAILURE;
@@ -144,13 +144,13 @@ public class FDNode extends Thread{
                                     , LogUtils.FD_NODE_LOG_FILENAME);
                         LogUtils.log(h.toString(), LogUtils.FD_NODE_LOG_FILENAME);
                         //
-                        // System.out.println("Failure detected. Heartbeat not acknowledge after ");
+                         System.out.println("Failure detected. Heartbeat not acknowledge after ");
                     }
                 }
                 if(count == 0){
                     //Log
                     LogUtils.log("Failure checker finished: no failures detected", LogUtils.FD_NODE_LOG_FILENAME);
-                    //System.out.println("Failure checker finished: no failures detected");
+                    System.out.println("Failure checker finished: no failures detected");
                 }
             }
         }, 60, 60, TimeUnit.SECONDS);
@@ -188,7 +188,7 @@ public class FDNode extends Thread{
                                 //Log
                                 LogUtils.log("Acknowledge received", LogUtils.FD_NODE_LOG_FILENAME);
                                 LogUtils.log(heartbeat.toString(), LogUtils.FD_NODE_LOG_FILENAME);
-                                //System.out.println("Acknowledge received");
+                                System.out.println("Acknowledge received");
                             } else {
                                 //Log
                                 LogUtils.log("ERROR: pending heartbeats list is empty", LogUtils.RING_NODE_LOG_FILENAME);
@@ -199,7 +199,7 @@ public class FDNode extends Thread{
                             sendAck(frame);
                             //Log
                             LogUtils.log("Acknowledge sent", LogUtils.FD_NODE_LOG_FILENAME);
-                            //System.out.println("Acknowledge sent");
+                            System.out.println("Acknowledge sent");
                         }
                     }
                 } catch (ClassNotFoundException e) {

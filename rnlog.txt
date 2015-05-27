@@ -2454,3 +2454,880 @@ Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
 Message: Piece 2 from ONE moves from x = 11 y = 8 to x = 13 y = 9
 ERROR: ack pending list is empty
 ERROR: ack pending list is empty
+Ring node initiated with id: 4
+host address:          192.168.2.4
+host port:             50001
+second player address:   192.168.2.4
+second player port:      50001
+third player address:     192.168.2.4
+third player port:        50001
+fourth player address:     192.168.2.4
+fourth player port:        50001
+Game node 4 started
+Ring node initiated with id: 4
+host address:          192.168.2.4
+host port:             50001
+second player address:   192.168.2.4
+second player port:      50001
+third player address:     192.168.2.4
+third player port:        50001
+fourth player address:     192.168.2.4
+fourth player port:        50001
+Game node 4 started
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 13 y = 9
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 13 y = 9
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 13 y = 9
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 13 y = 9
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 13 y = 9
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from ONE moves from x = 10 y = 8 to x = 13 y = 9
+ERROR: ack pending list is empty
+ERROR: ack pending list is empty
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from TWO moves from x = 3 y = 3 to x = 1 y = 3
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from TWO moves from x = 3 y = 3 to x = 1 y = 3
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from TWO moves from x = 3 y = 3 to x = 1 y = 3
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from TWO moves from x = 3 y = 3 to x = 1 y = 3
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from TWO moves from x = 3 y = 3 to x = 1 y = 3
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from TWO moves from x = 3 y = 3 to x = 1 y = 3
+ERROR: ack pending list is empty
+ERROR: ack pending list is empty
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from THREE moves from x = 10 y = 10 to x = 3 y = 12
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from THREE moves from x = 10 y = 10 to x = 3 y = 12
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from THREE moves from x = 10 y = 10 to x = 3 y = 12
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from THREE moves from x = 10 y = 10 to x = 3 y = 12
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from THREE moves from x = 10 y = 10 to x = 3 y = 12
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from THREE moves from x = 10 y = 10 to x = 3 y = 12
+ERROR: ack pending list is empty
+ERROR: ack pending list is empty
+Ring node initiated with id: 4
+host address:          192.168.2.4
+host port:             50001
+second player address:   192.168.2.4
+second player port:      50001
+third player address:     192.168.2.4
+third player port:        50001
+fourth player address:     192.168.2.4
+fourth player port:        50001
+Game node 4 started
+Ring node initiated with id: 4
+host address:          192.168.2.4
+host port:             50001
+second player address:   192.168.2.4
+second player port:      50001
+third player address:     192.168.2.4
+third player port:        50001
+fourth player address:     192.168.2.4
+fourth player port:        50001
+Game node 4 started
+Ring node initiated with id: 4
+host address:          192.168.2.4
+host port:             50001
+second player address:   192.168.2.4
+second player port:      50001
+third player address:     192.168.2.4
+third player port:        50001
+fourth player address:     192.168.2.4
+fourth player port:        50001
+Game node 4 started
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 2 from ONE moves from x = 0 y = 0 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 2 from ONE moves from x = 0 y = 0 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 2 from ONE moves from x = 0 y = 0 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 2 from ONE moves from x = 0 y = 0 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 2 from ONE moves from x = 0 y = 0 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 2 from ONE moves from x = 0 y = 0 to x = 11 y = 8
+ERROR: ack pending list is empty
+ERROR: ack pending list is empty
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from TWO moves from x = 0 y = 0 to x = 3 y = 6
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from TWO moves from x = 0 y = 0 to x = 3 y = 6
+Frame sent
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from TWO moves from x = 0 y = 0 to x = 3 y = 6
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from TWO moves from x = 0 y = 0 to x = 3 y = 6
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from TWO moves from x = 0 y = 0 to x = 3 y = 6
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from TWO moves from x = 0 y = 0 to x = 3 y = 6
+ERROR: ack pending list is empty
+ERROR: ack pending list is empty
+Ring node initiated with id: 4
+host address:          192.168.2.4
+host port:             50001
+second player address:   192.168.2.4
+second player port:      50001
+third player address:     192.168.2.4
+third player port:        50001
+fourth player address:     192.168.2.4
+fourth player port:        50001
+Game node 4 started
+Ring node initiated with id: 4
+host address:          192.168.2.4
+host port:             50001
+second player address:   192.168.2.4
+second player port:      50001
+third player address:     192.168.2.4
+third player port:        50001
+fourth player address:     192.168.2.4
+fourth player port:        50001
+Game node 4 started
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from ONE moves from x = 12 y = 4 to x = 10 y = 4
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from ONE moves from x = 12 y = 4 to x = 10 y = 4
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from ONE moves from x = 12 y = 4 to x = 10 y = 4
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from ONE moves from x = 12 y = 4 to x = 10 y = 4
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from ONE moves from x = 12 y = 4 to x = 10 y = 4
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 0 from ONE moves from x = 12 y = 4 to x = 10 y = 4
+ERROR: ack pending list is empty
+ERROR: ack pending list is empty
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 2 from TWO moves from x = 0 y = 4 to x = 2 y = 3
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 2 from TWO moves from x = 0 y = 4 to x = 2 y = 3
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 2 from TWO moves from x = 0 y = 4 to x = 2 y = 3
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 2 from TWO moves from x = 0 y = 4 to x = 2 y = 3
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 2 from TWO moves from x = 0 y = 4 to x = 2 y = 3
+Frame sent
+Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
+Message: Piece 2 from TWO moves from x = 0 y = 4 to x = 2 y = 3
+ERROR: ack pending list is empty
+ERROR: ack pending list is empty
+Ring node initiated with id: 4
+host address:          192.168.2.166
+host port:             50001
+second player address:   192.168.2.166
+second player port:      50001
+third player address:     192.168.2.166
+third player port:        50001
+fourth player address:     192.168.2.166
+fourth player port:        50001
+Game node 4 started
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Ring node initiated with id: 4
+host address:          192.168.2.166
+host port:             50001
+second player address:   192.168.2.166
+second player port:      50001
+third player address:     192.168.2.166
+third player port:        50001
+fourth player address:     192.168.2.166
+fourth player port:        50001
+Game node 4 started
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Ring node initiated with id: 4
+host address:          192.168.2.166
+host port:             50001
+second player address:   192.168.2.166
+second player port:      50001
+third player address:     192.168.2.166
+third player port:        50001
+fourth player address:     192.168.2.166
+fourth player port:        50001
+Game node 4 started
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Ring node initiated with id: 4
+host address:          192.168.2.166
+host port:             50001
+second player address:   192.168.2.166
+second player port:      50001
+third player address:     192.168.2.166
+third player port:        50001
+fourth player address:     192.168.2.166
+fourth player port:        50001
+Game node 4 started
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 0 from ONE moves from x = 12 y = 9 to x = 10 y = 9
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 0 from ONE moves from x = 12 y = 9 to x = 10 y = 9
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 0 from ONE moves from x = 12 y = 9 to x = 10 y = 9
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 0 from ONE moves from x = 12 y = 9 to x = 10 y = 9
+ERROR: pending heartbeats list is empty
+Ring node initiated with id: 4
+host address:          192.168.2.166
+host port:             50001
+second player address:   192.168.2.166
+second player port:      50001
+third player address:     192.168.2.166
+third player port:        50001
+fourth player address:     192.168.2.166
+fourth player port:        50001
+Game node 4 started
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+ERROR: ack pending list is empty
+ERROR: ack pending list is empty
+Ring node initiated with id: 4
+host address:          192.168.2.166
+host port:             50001
+second player address:   192.168.2.166
+second player port:      50001
+third player address:     192.168.2.166
+third player port:        50001
+fourth player address:     192.168.2.166
+fourth player port:        50001
+Game node 4 started
+Ring node initiated with id: 4
+host address:          192.168.2.166
+host port:             50001
+second player address:   192.168.2.166
+second player port:      50001
+third player address:     192.168.2.166
+third player port:        50001
+fourth player address:     192.168.2.166
+fourth player port:        50001
+Game node 4 started
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Ring node initiated with id: 4
+host address:          192.168.2.166
+host port:             50001
+second player address:   192.168.2.166
+second player port:      50001
+third player address:     192.168.2.166
+third player port:        50001
+fourth player address:     192.168.2.166
+fourth player port:        50001
+Game node 4 started
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Ring node initiated with id: 4
+host address:          192.168.2.166
+host port:             50001
+second player address:   192.168.2.166
+second player port:      50001
+third player address:     192.168.2.166
+third player port:        50001
+fourth player address:     192.168.2.166
+fourth player port:        50001
+Game node 4 started
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Ring node initiated with id: 4
+host address:          192.168.2.166
+host port:             50001
+second player address:   192.168.2.166
+second player port:      50001
+third player address:     192.168.2.166
+third player port:        50001
+fourth player address:     192.168.2.166
+fourth player port:        50001
+Game node 4 started
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Ring node initiated with id: 4
+host address:          192.168.2.166
+host port:             50001
+second player address:   192.168.2.166
+second player port:      50001
+third player address:     192.168.2.166
+third player port:        50001
+fourth player address:     192.168.2.166
+fourth player port:        50001
+Game node 4 started
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Ring node initiated with id: 4
+host address:          192.168.2.166
+host port:             50001
+second player address:   192.168.2.166
+second player port:      50001
+third player address:     192.168.2.166
+third player port:        50001
+fourth player address:     192.168.2.166
+fourth player port:        50001
+Game node 4 started
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Ring node initiated with id: 4
+host address:          192.168.2.166
+host port:             50001
+second player address:   192.168.2.166
+second player port:      50001
+third player address:     192.168.2.166
+third player port:        50001
+fourth player address:     192.168.2.166
+fourth player port:        50001
+Game node 4 started
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Ring node initiated with id: 4
+host address:          192.168.2.166
+host port:             50001
+second player address:   192.168.2.166
+second player port:      50001
+third player address:     192.168.2.166
+third player port:        50001
+fourth player address:     192.168.2.166
+fourth player port:        50001
+Game node 4 started
+Frame sent
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+ERROR: ack pending list is empty
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Ring node initiated with id: 4
+host address:          192.168.2.166
+host port:             50001
+second player address:   192.168.2.166
+second player port:      50001
+third player address:     192.168.2.166
+third player port:        50001
+fourth player address:     192.168.2.166
+fourth player port:        50001
+Game node 4 started
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+ERROR: ack pending list is empty
+ERROR: ack pending list is empty
+Ring node initiated with id: 4
+host address:          192.168.2.166
+host port:             50001
+second player address:   192.168.2.166
+second player port:      50001
+third player address:     192.168.2.166
+third player port:        50001
+fourth player address:     192.168.2.166
+fourth player port:        50001
+Game node 4 started
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+ERROR: ack pending list is empty
+ERROR: ack pending list is empty
+Ring node initiated with id: 4
+host address:          192.168.2.166
+host port:             50001
+second player address:   192.168.2.166
+second player port:      50001
+third player address:     192.168.2.166
+third player port:        50001
+fourth player address:     192.168.2.166
+fourth player port:        50001
+Game node 4 started
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+ERROR: ack pending list is empty
+ERROR: ack pending list is empty
+Ring node initiated with id: 4
+host address:          192.168.2.166
+host port:             50001
+second player address:   192.168.2.166
+second player port:      50001
+third player address:     192.168.2.166
+third player port:        50001
+fourth player address:     192.168.2.166
+fourth player port:        50001
+Game node 4 started
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Ring node initiated with id: 4
+host address:          192.168.2.166
+host port:             50001
+second player address:   192.168.2.166
+second player port:      50001
+third player address:     192.168.2.166
+third player port:        50001
+fourth player address:     192.168.2.166
+fourth player port:        50001
+Game node 4 started
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Ring node initiated with id: 4
+host address:          192.168.2.166
+host port:             50001
+second player address:   192.168.2.166
+second player port:      50001
+third player address:     192.168.2.166
+third player port:        50001
+fourth player address:     192.168.2.166
+fourth player port:        50001
+Game node 4 started
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Ring node initiated with id: 4
+host address:          192.168.2.166
+host port:             50001
+second player address:   192.168.2.166
+second player port:      50001
+third player address:     192.168.2.166
+third player port:        50001
+fourth player address:     192.168.2.166
+fourth player port:        50001
+Game node 4 started
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Ring node initiated with id: 4
+host address:          192.168.2.166
+host port:             50001
+second player address:   192.168.2.166
+second player port:      50001
+third player address:     192.168.2.166
+third player port:        50001
+fourth player address:     192.168.2.166
+fourth player port:        50001
+Game node 4 started
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Ring node initiated with id: 4
+host address:          192.168.2.166
+host port:             50001
+second player address:   192.168.2.166
+second player port:      50001
+third player address:     192.168.2.166
+third player port:        50001
+fourth player address:     192.168.2.166
+fourth player port:        50001
+Game node 4 started
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Ring node initiated with id: 4
+host address:          192.168.2.166
+host port:             50001
+second player address:   192.168.2.166
+second player port:      50001
+third player address:     192.168.2.166
+third player port:        50001
+fourth player address:     192.168.2.166
+fourth player port:        50001
+Game node 4 started
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Ring node initiated with id: 4
+host address:          192.168.2.166
+host port:             50001
+second player address:   192.168.2.166
+second player port:      50001
+third player address:     192.168.2.166
+third player port:        50001
+fourth player address:     192.168.2.166
+fourth player port:        50001
+Game node 4 started
+Ring node initiated with id: 4
+host address:          192.168.2.166
+host port:             50001
+second player address:   192.168.2.166
+second player port:      50001
+third player address:     192.168.2.166
+third player port:        50001
+fourth player address:     192.168.2.166
+fourth player port:        50001
+Game node 4 started
+Ring node initiated with id: 4
+host address:          192.168.2.166
+host port:             50001
+second player address:   192.168.2.166
+second player port:      50001
+third player address:     192.168.2.166
+third player port:        50001
+fourth player address:     192.168.2.166
+fourth player port:        50001
+Game node 4 started
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Ring node initiated with id: 4
+host address:          192.168.2.166
+host port:             50001
+second player address:   192.168.2.166
+second player port:      50001
+third player address:     192.168.2.166
+third player port:        50001
+fourth player address:     192.168.2.166
+fourth player port:        50001
+Game node 4 started
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Ring node initiated with id: 4
+host address:          192.168.2.166
+host port:             50001
+second player address:   192.168.2.166
+second player port:      50001
+third player address:     192.168.2.166
+third player port:        50001
+fourth player address:     192.168.2.166
+fourth player port:        50001
+Game node 4 started
+Ring node initiated with id: 4
+host address:          192.168.2.166
+host port:             50001
+second player address:   192.168.2.166
+second player port:      50001
+third player address:     192.168.2.166
+third player port:        50001
+fourth player address:     192.168.2.166
+fourth player port:        50001
+Game node 4 started
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 192.168.2.166 , 50001 to:   Macky.local/192.168.2.166 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Ring node initiated with id: 4
+host address:          172.16.78.1
+host port:             50001
+second player address:   172.16.78.1
+second player port:      50001
+third player address:     172.16.78.1
+third player port:        50001
+fourth player address:     172.16.78.1
+fourth player port:        50001
+Game node 4 started
+Frame sent
+Frame from: 172.16.78.1 , 50001 to:   Macky.local/172.16.78.1 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 172.16.78.1 , 50001 to:   Macky.local/172.16.78.1 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 172.16.78.1 , 50001 to:   Macky.local/172.16.78.1 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 172.16.78.1 , 50001 to:   Macky.local/172.16.78.1 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 172.16.78.1 , 50001 to:   Macky.local/172.16.78.1 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+Frame sent
+Frame from: 172.16.78.1 , 50001 to:   Macky.local/172.16.78.1 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
+ERROR: ack pending list is empty
+ERROR: ack pending list is empty

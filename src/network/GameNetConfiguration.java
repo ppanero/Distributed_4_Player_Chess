@@ -149,10 +149,10 @@ public class GameNetConfiguration {
                 }
             }
             in.close();
-            localp = InetAddress.getLocalHost();
+            /*localp = InetAddress.getLocalHost();
             secondp = InetAddress.getLocalHost();
             thirdp = InetAddress.getLocalHost();
-            fourthp = InetAddress.getLocalHost();
+            fourthp = InetAddress.getLocalHost();*/
         } catch (FileNotFoundException e) {
             System.out.println("The file " + filename + " was not found");
         } catch (IOException e) {

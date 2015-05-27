@@ -1,90 +1,34 @@
 Failure detection node created with id: 4
-host address:          192.168.2.4
+host address:          172.16.78.1
 host port:             50003
-predecessor address:   192.168.2.4
+predecessor address:   172.16.78.1
 predecessor port:      50003
-successor address:     192.168.2.4
+successor address:     172.16.78.1
 successor port:        50003
 FD node 4 started
-Game message failure checker started
-Game message failure checker finished: no failures detected
 Frame received
-Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
-Message: Piece 2 from ONE moves from x = 11 y = 8 to x = 13 y = 9
+Frame from: 172.16.78.1 , 50001 to:   Macky.local/172.16.78.1 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
 Acknowledge sent
 Frame received
-Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
-Message: Piece 2 from ONE moves from x = 11 y = 8 to x = 13 y = 9
+Frame from: 172.16.78.1 , 50001 to:   Macky.local/172.16.78.1 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
 Acknowledge sent
 Frame received
-Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
-Message: Piece 2 from ONE moves from x = 11 y = 8 to x = 13 y = 9
+Frame from: 172.16.78.1 , 50001 to:   Macky.local/172.16.78.1 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
 Acknowledge sent
 Frame received
-Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
-Message: Piece 2 from ONE moves from x = 11 y = 8 to x = 13 y = 9
+Frame from: 172.16.78.1 , 50001 to:   Macky.local/172.16.78.1 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
 Acknowledge received
 Acknowledge received
 Acknowledge received
-Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
-Message: Piece 2 from ONE moves from x = 11 y = 8 to x = 13 y = 9
+Frame from: 172.16.78.1 , 50001 to:   Macky.local/172.16.78.1 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
 Frame received
-Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
-Message: Piece 2 from ONE moves from x = 11 y = 8 to x = 13 y = 9
+Frame from: 172.16.78.1 , 50001 to:   Macky.local/172.16.78.1 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8
 Frame received
-Frame from: 192.168.2.4 , 50001 to:   Macky.local/192.168.2.4 , 50001
-Message: Piece 2 from ONE moves from x = 11 y = 8 to x = 13 y = 9
-Game message failure checker started
-Game message failure checker finished: no failures detected
-Frame sent
-Heartbeat frame: 1432123838385 from: 192.168.2.4 , 50003 to: 192.168.2.4 , 50003
-Predecessor heartbeat sent
-Frame received
-Heartbeat frame: 1432123838385 from: 192.168.2.4 , 50003 to: 192.168.2.4 , 50003
-Frame sent
-Heartbeat frame: 1432123838389 from: 192.168.2.4 , 50003 to: 192.168.2.4 , 50003
-Frame sent
-Successor heartbeat sent
-Heartbeat frame: 1432123838385 from: 192.168.2.4 , 50003 to: 192.168.2.4 , 50003
-Acknowledge sent
-Frame received
-Heartbeat frame: 1432123838389 from: 192.168.2.4 , 50003 to: 192.168.2.4 , 50003
-Frame sent
-Heartbeat frame: 1432123838389 from: 192.168.2.4 , 50003 to: 192.168.2.4 , 50003
-Acknowledge sent
-Frame received
-Heartbeat frame: 1432123838385 from: 192.168.2.4 , 50003 to: 192.168.2.4 , 50003
-Acknowledge received
-node address: 192.168.2.4 timestamp 1432123838385
-Frame received
-Heartbeat frame: 1432123838389 from: 192.168.2.4 , 50003 to: 192.168.2.4 , 50003
-Acknowledge received
-node address: 192.168.2.4 timestamp 1432123838389
-Game message failure checker started
-Game message failure checker finished: no failures detected
-Game message failure checker started
-Game message failure checker finished: no failures detected
-Frame sent
-Heartbeat frame: 1432123858408 from: 192.168.2.4 , 50003 to: 192.168.2.4 , 50003
-Predecessor heartbeat sent
-Frame sent
-Heartbeat frame: 1432123858416 from: 192.168.2.4 , 50003 to: 192.168.2.4 , 50003
-Successor heartbeat sent
-Frame received
-Heartbeat frame: 1432123858408 from: 192.168.2.4 , 50003 to: 192.168.2.4 , 50003
-Frame sent
-Heartbeat frame: 1432123858408 from: 192.168.2.4 , 50003 to: 192.168.2.4 , 50003
-Acknowledge sent
-Frame received
-Heartbeat frame: 1432123858416 from: 192.168.2.4 , 50003 to: 192.168.2.4 , 50003
-Frame sent
-Heartbeat frame: 1432123858416 from: 192.168.2.4 , 50003 to: 192.168.2.4 , 50003
-Acknowledge sent
-Frame received
-Heartbeat frame: 1432123858408 from: 192.168.2.4 , 50003 to: 192.168.2.4 , 50003
-Acknowledge received
-node address: 192.168.2.4 timestamp 1432123858408
-Frame received
-Heartbeat frame: 1432123858416 from: 192.168.2.4 , 50003 to: 192.168.2.4 , 50003
-Acknowledge received
-node address: 192.168.2.4 timestamp 1432123858416
+Frame from: 172.16.78.1 , 50001 to:   Macky.local/172.16.78.1 , 50001
+Message: Piece 2 from ONE moves from x = 13 y = 9 to x = 11 y = 8

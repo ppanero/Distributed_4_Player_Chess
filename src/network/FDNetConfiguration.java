@@ -118,9 +118,9 @@ public class FDNetConfiguration {
                 }
             }
             in.close();
-            host = InetAddress.getLocalHost();
+            /*host = InetAddress.getLocalHost();
             successor = InetAddress.getLocalHost();
-            predecessor = InetAddress.getLocalHost();
+            predecessor = InetAddress.getLocalHost();*/
         } catch (FileNotFoundException e) {
             System.out.println("The file " + filename + " was not found");
         } catch (IOException e) {

@@ -1,3 +1,4 @@
+import Utils.CryptoUtils;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 import database.DatabaseManager;
 import game.control.Chess;
@@ -23,11 +24,12 @@ public class Main {
             }
             cpds.setJdbcUrl("jdbc:mysql://localhost/fpchess");
             cpds.setUser("root");
-            cpds.setPassword("bAtsDUpX");
+            cpds.setPassword("toor");
             cpds.setAcquireRetryAttempts(1);
             cpds.setAcquireRetryDelay(1);
             cpds.setBreakAfterAcquireFailure(true);
             ds = cpds;
+            CryptoUtils.initCipher("FourPlayerChess!");
             DatabaseManager dm = new DatabaseManager(ds);
             dm.initializeDatabase();
             final Chess controller = new Chess();

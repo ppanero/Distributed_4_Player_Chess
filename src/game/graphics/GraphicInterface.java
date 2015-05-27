@@ -63,11 +63,11 @@ public class GraphicInterface extends JFrame {
                 // passes x and y coordinates to drawHighlighted, which returns
                 // array of available moves.
                 try {
-                    if(myGrid[x / SQUARE_SIZE][y /SQUARE_SIZE] != null && myGrid[x / SQUARE_SIZE][y /SQUARE_SIZE].getPiece() != null
-                            && moveToSend.getPrex() == -1 && moveToSend.getPrey() == -1){
+                    /*if(initializeHighlighted[x/SQUARE_SIZE][y/SQUARE_SIZE] ==  Highlighted.RED || (myGrid[x / SQUARE_SIZE][y /SQUARE_SIZE] != null && myGrid[x / SQUARE_SIZE][y /SQUARE_SIZE].getPiece() != null
+                            && moveToSend.getPrex() == -1 && moveToSend.getPrey() == -1)){
                         moveToSend.setPrex(x / SQUARE_SIZE);
                         moveToSend.setPrey(y /SQUARE_SIZE);
-                    }
+                    }*/
                     drawHighlighted(board.selectLocation((x / SQUARE_SIZE), (y / SQUARE_SIZE)));
                     drawPiecesAndRepaint();
                     // on each mouseclick, checks if game is over
@@ -371,9 +371,13 @@ public class GraphicInterface extends JFrame {
 				if (!arr[x][y].equals(myHighlighted[x][y] == null ? null
 						: myHighlighted[x][y].getEnum())) {
 					if (myHighlighted[x][y] != null) {
-						pane.remove(myHighlighted[x][y]);
-						piece = new HighlightedPanel(arr[x][y], SQUARE_SIZE);
-						myHighlighted[x][y] = piece;
+                        pane.remove(myHighlighted[x][y]);
+                        piece = new HighlightedPanel(arr[x][y], SQUARE_SIZE);
+                        myHighlighted[x][y] = piece;
+                        if (myHighlighted[x][y].getEnum() == Highlighted.RED){
+                            moveToSend.setPrex(x);
+                            moveToSend.setPrey(y);
+                        }
 						piece.setBounds(i, j, SQUARE_SIZE, SQUARE_SIZE);
 						pane.add(piece, new Integer(HIGHLIGHTED_LAYER), 0);
 					}

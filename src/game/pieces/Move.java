@@ -132,10 +132,10 @@ public class Move implements Serializable{
     @Override
     public String toString(){
         if(piece != null)
-            return "Piece " +  piece.getType() + " from " + piece.getPlayerNum() + " moves from x = " + x + " y = " + y +
-                    " to x = " + prex + " y = " + prey;
+            return "Piece " +  piece.getType() + " from " + piece.getPlayerNum() + " moves from x = " + prex + " y = " + prey +
+                    " to x = " + x + " y = " + y;
         else
-            return "Null piece moves from x = " + x + " y = " + y +
-                    " to x = " + prex + " y = " + prey;
+            return "Null piece moves from x = " + prex + " y = " + prey +
+                    " to x = " + x + " y = " + y;
     }
 }
